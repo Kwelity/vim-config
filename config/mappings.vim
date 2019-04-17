@@ -401,4 +401,12 @@ augroup numbertoggle
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
 
+" Jq
+command! JsonBeautify %!jq '.'
+command! Jq %!jq '.'
+" VSCode
+command! OpenInVSCode exe "silent !code --goto '" . expand("%") . ":" . line(".") . ":" . col(".") . "'" | redraw!
+command! VSCode OpenInVSCode
+command! Code OpenInVSCode
+
 " vim: set ts=2 sw=2 tw=80 noet :
