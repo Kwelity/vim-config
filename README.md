@@ -538,9 +538,9 @@ Arrows | Normal | Resize splits (* Enable `g:elite_mode` in `.vault.vim`)
 `<leader>`+`d` | Normal/Visual | Duplicate line or selection
 `<leader>`+`S` | Normal/Visual | Source selection
 `<leader>`+`ml` | Normal | Append modeline
-`<A>`+`a` | Normal | Decrease number (<C-x>)
-`<A>`+`k` | Normal | Add new line above retaining current position
-`<A>`+`j` | Normal | Add new line below retaining current position
+`Alt`+`a` | Normal | Decrease number (<C-x>)
+`Alt`+`k` | Normal | Add new line above retaining current position
+`Alt`+`j` | Normal | Add new line below retaining current position
 
 ### File Operations
 
@@ -566,6 +566,7 @@ Key   | Mode | Action
 `g0` | Normal | Go to first tab (:tabfirst)
 `g$` | Normal | Go to last tab (:tablast)
 `gr` | Normal | Go to previous tab (:tabprevious)
+`gt` | Normal | Go to next tab (:tabnext)
 `Ctrl`+`j` | Normal | Move to split below (\<C-w>j)
 `Ctrl`+`k` | Normal | Move to upper split (\<C-w>k)
 `Ctrl`+`h` | Normal | Move to left split (\<C-w>h)
@@ -709,6 +710,7 @@ Key   | Mode | Action
 `s`+`s` | Normal | Jump to two characters from input
 `s`+`d` | Normal | Jump to a character from input
 `s`+`f` | Normal | Jump over-windows
+`s`+`w` | Normal | Jump over-words
 `s`+`h` | Normal | Jump backwards in-line
 `s`+`l` | Normal | Jump forwards in-line
 `s`+`j` | Normal | Jump downwards
