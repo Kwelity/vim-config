@@ -297,12 +297,9 @@ Name           | Description
 [fszymanski/deoplete-emoji] | Deoplete source for emoji codes
 [juliosueiras/vim-terraform-completion] | Autocompletion and linter for Terraform
 [ternjs/tern_for_vim] | Provides Tern-based JavaScript editing support
-<<<<<<< HEAD
 [autozimu/LanguageClient-neovim] | Provides LanguageServer based completion
 [tbodt/deoplete-tabnine] | Provides TabNine completion with deoplete
-=======
 [ternjs/tern_for_vim] | Provides Tern-based JavaScript editing support
->>>>>>> e846277e105140209070c6bd55b28c41586e3176
 
 ### Denite
 
