@@ -123,6 +123,7 @@ map <Leader>cd :lcd %:p:h<CR>:pwd<CR>
 
 " Fast saving
 nnoremap <silent><Leader>w :write<CR>
+nnoremap <silent><Leader>ww :write!<CR>
 vnoremap <silent><Leader>w <Esc>:write<CR>
 nnoremap <silent><C-s> :<C-u>write<CR>
 vnoremap <silent><C-s> :<C-u>write<CR>
