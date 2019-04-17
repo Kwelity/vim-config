@@ -228,6 +228,12 @@
     let g:EasyMotion_smartcase = 1
     let g:EasyMotion_use_smartsign_us = 1
 
+- repo: haya14busa/incsearch.vim
+
+- repo: haya14busa/incsearch-fuzzy.vim
+
+- repo: haya14busa/incsearch-easymotion.vim
+
 - repo: chemzqm/vim-easygit
   on_cmd: [Gcd, Glcd, Gcommit, Gblame, Gstatus, Gdiff, Gbrowse, Gstatus, Gpush]
   hook_source: let g:easygit_enable_command = 1
