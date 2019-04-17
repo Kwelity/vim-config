@@ -161,6 +161,7 @@ nmap <silent> <Leader>tw :setlocal wrap! breakindent!<CR>
 nnoremap <silent> g0 :<C-u>tabfirst<CR>
 nnoremap <silent> g$ :<C-u>tablast<CR>
 nnoremap <silent> gr :<C-u>tabprevious<CR>
+nnoremap <silent> gt :<C-u>tabnext<CR>
 nnoremap <silent> <A-j> :<C-U>tabnext<CR>
 nnoremap <silent> <A-k> :<C-U>tabprevious<CR>
 nnoremap <silent> <C-Tab> :<C-U>tabnext<CR>
