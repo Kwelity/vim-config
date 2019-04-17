@@ -481,6 +481,9 @@
   build: bash install.sh
   hook_source: source $VIMPATH/config/plugins/languageclientneovim.vim
 
+- repo: tbodt/deoplete-tabnine
+  build: bash install.sh
+
 # ==========================================
 # Denite
 # ------
