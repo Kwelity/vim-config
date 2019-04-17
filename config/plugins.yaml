@@ -245,10 +245,13 @@
   hook_source: let g:online_thesaurus_map_keys = 0
 
 - repo: diepm/vim-rest-console.git
-  hook_add: |
-    let g:vrc_set_default_mapping = 0
+  hook_add: let g:vrc_set_default_mapping = 0
 
 - repo: jremmen/vim-ripgrep
+
+- repo: lfilho/cosco.vim
+
+- repo: lotabout/skim.vim
 
 # ==========================================
 # Interface

@@ -384,4 +384,8 @@ if dein#tap('vim-rest-console')
 	noremap <Leader>r :call VrcQuery()<CR>
 endif
 
+if dein#tap('lfilho/cosco.vim')
+	autocmd FileType javascript,css,rust nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
+endif
+
 " vim: set ts=2 sw=2 tw=80 noet :
