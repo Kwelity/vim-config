@@ -476,6 +476,11 @@
   hook_post_source: |
     autocmd MyAutoCmd FileType javascript setlocal omnifunc=tern#Complete
 
+- repo: autozimu/LanguageClient-neovim
+  rev: next
+  build: bash install.sh
+  hook_source: source $VIMPATH/config/plugins/languageclientneovim.vim
+
 # ==========================================
 # Denite
 # ------
