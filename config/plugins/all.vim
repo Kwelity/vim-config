@@ -122,6 +122,7 @@ endif
 if dein#tap('accelerated-jk')
 	nmap <silent>j <Plug>(accelerated_jk_gj)
 	nmap <silent>k <Plug>(accelerated_jk_gk)
+	let g:accelerated_jk_acceleration_table = [7,9,12,14]
 endif
 
 if dein#tap('vim-edgemotion')
