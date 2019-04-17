@@ -89,6 +89,7 @@ pip install --user pycodestyle pyflakes flake8 vim-vint proselint yamllint
 
 ### Recommended Tools
 
+- rg (ripgrep)
 - ag (The Silver Searcher): [ggreer/the_silver_searcher](https://github.com/ggreer/the_silver_searcher)
 - z (jump around): [rupa/z](https://github.com/rupa/z)
 - Universal ctags: [ctags.io](https://ctags.io/)
@@ -133,6 +134,7 @@ If you'd like to install plugins by yourself, create a
 - Package management with caching enabled and lazy loading
 - Project-aware tabs and label
 - NERDTree as file-manager + Git status icons
+- Rust completion via tabnine and LanguageServer-neovim (RLS)
 - Go completion via vim-go and gocode
 - Javascript completion via Tern
 - Python Jedi completion, PEP8 convention
@@ -244,6 +246,10 @@ Name           | Description
 [chemzqm/vim-easygit] | Git wrapper focus on simplity and usability
 [majutsushi/tagbar] | Displays tags in a window, ordered by scope
 [beloglazov/vim-online-thesaurus] | Look up words in an online thesaurus
+[diepm/vim-rest-console] | Send query to rest api
+[jremmen/vim-ripgrep] | The rg command in vim
+[lfilho/cosco.vim] | Automatically add semi-colon at end of line
+[llotabout/skim.vim] | The skim (sk) command in vim
 
 ### Interface
 
@@ -289,6 +295,7 @@ Name           | Description
 [fszymanski/deoplete-emoji] | Deoplete source for emoji codes
 [juliosueiras/vim-terraform-completion] | Autocompletion and linter for Terraform
 [ternjs/tern_for_vim] | Provides Tern-based JavaScript editing support
+[ternjs/tern_for_vim] | Provides Tern-based JavaScript editing support
 
 ### Denite
 
@@ -302,7 +309,9 @@ Name           | Description
 [chemzqm/denite-git] | gitlog, gitstatus and gitchanged sources
 [rafi/vim-denite-z] | Filter and browse Z (jump around) data file
 [rafi/vim-denite-session] | Browse and open sessions
-[rafi/vim-denite-mpc] | Denite source for browsing your MPD music library
+[mhinz/vim-startify] | Vim startup page
+[wellle/visual-split.vim] | Resize pane based on buffer content
+
 
 ### Operators & Text Objects
 
