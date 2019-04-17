@@ -1,4 +1,6 @@
-# Rafael Bodill's Neo/vim Config
+# Kwelity's Neo/vim Config based on Rafael Bodill's
+
+This fork aims to keep the underlying architecture of the conf without relying on local config files (which became less maintainable)
 
 Lean mean Neo/vim machine, 30-45ms startup time.
 
@@ -45,7 +47,7 @@ we'll also symlink it for Vim:
 
 ```sh
 mkdir ~/.config
-git clone git://github.com/rafi/vim-config.git ~/.config/nvim
+git clone git://github.com/Kwelity/vim-config.git ~/.config/nvim
 ln -s ~/.config/nvim ~/.vim
 ```
 
