@@ -273,7 +273,7 @@ if dein#tap('open-browser.vim')
 endif
 
 if dein#tap('undotree')
-	nnoremap <Leader>gu :UndotreeToggle<CR>
+	nnoremap <Leader>u :UndotreeToggle<CR>
 endif
 
 if dein#tap('vim-online-thesaurus')
