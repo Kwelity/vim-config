@@ -380,4 +380,8 @@ if dein#tap('vim-textobj-function')
 	xmap <silent> if <Plug>(textobj-function-i)
 endif
 
+if dein#tap('vim-rest-console')
+	noremap <Leader>r :call VrcQuery()<CR>
+endif
+
 " vim: set ts=2 sw=2 tw=80 noet :
