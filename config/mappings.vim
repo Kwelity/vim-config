@@ -253,6 +253,10 @@ vnoremap mk :m-2<CR>gv=gv
 vnoremap mj :m'>+<CR>gv=gv
 noremap  mk :m-2<CR>
 noremap  mj :m+<CR>
+"
+" Move visual block
+vnoremap J :m'>+<CR>gv=gv
+vnoremap K :m-2<CR>gv=gv
 
 " Session management shortcuts
 nmap <silent> <Leader>se :<C-u>execute 'SessionSave' fnamemodify(resolve(getcwd()), ':p:gs?/?_?')<CR>
