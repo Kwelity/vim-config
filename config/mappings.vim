@@ -152,6 +152,7 @@ nmap <silent> gh :echo 'hi<'.synIDattr(synID(line('.'), col('.'), 1), 'name')
 " Toggle editor visuals
 nmap <silent> <Leader>ts :setlocal spell!<cr>
 nmap <silent> <Leader>tn :setlocal nonumber!<CR>
+nmap <silent> <Leader>tN :setlocal number relativenumber!<CR>
 nmap <silent> <Leader>tl :setlocal nolist!<CR>
 nmap <silent> <Leader>th :nohlsearch<CR>
 nmap <silent> <Leader>tw :setlocal wrap! breakindent!<CR>
@@ -346,5 +347,11 @@ function! OpenChangedFiles()
 		exec 'sp ' . filename
 	endfor
 endfunction
+
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
 
 " vim: set ts=2 sw=2 tw=80 noet :

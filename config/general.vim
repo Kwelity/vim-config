@@ -164,29 +164,29 @@ endif
 " }}}
 " Editor UI Appearance {{{
 " --------------------
-set noshowmode          " Don't show mode in cmd window
-set shortmess=aoOTI     " Shorten messages and don't show intro
-set scrolloff=2         " Keep at least 2 lines above/below
-set sidescrolloff=5     " Keep at least 5 lines left/right
-set nonumber            " Don't show line numbers
-set noruler             " Disable default status ruler
-set list                " Show hidden characters
+set noshowmode						" Don't show mode in cmd window
+set shortmess=aoOTI				" Shorten messages and don't show intro
+set scrolloff=2						" Keep at least 2 lines above/below
+set sidescrolloff=5				" Keep at least 5 lines left/right
+set number relativenumber " show number line on left side in a hybrid way
+set noruler								" Disable default status ruler
+set list									" Show hidden characters
 
-set showtabline=2       " Always show the tabs line
-set winwidth=30         " Minimum width for active window
-set winminwidth=10      " Minimum width for inactive windows
-set winheight=4         " Minimum height for active window
-set winminheight=2      " Minimum height for inactive window
-set pumheight=15        " Pop-up menu's line height
-set helpheight=12       " Minimum help window height
-set previewheight=12    " Completion preview height
+set showtabline=2					" Always show the tabs line
+set winwidth=30						" Minimum width for active window
+set winminwidth=10				" Minimum width for inactive windows
+set winheight=4						" Minimum height for active window
+set winminheight=2				" Minimum height for inactive window
+set pumheight=15					" Pop-up menu's line height
+set helpheight=12					" Minimum help window height
+set previewheight=12			" Completion preview height
 
-set noshowcmd           " Don't show command in status line
-set cmdheight=2         " Height of the command line
-set cmdwinheight=5      " Command-line lines
-set noequalalways       " Don't resize windows on split or close
-set laststatus=2        " Always show a status line
-set colorcolumn=80      " Highlight the 80th character limit
+set showcmd								" Show command in status line
+set cmdheight=1						" Height of the command line
+set cmdwinheight=5				" Command-line lines
+set noequalalways					" Don't resize windows on split or close
+set laststatus=2					" Always show a status line
+set colorcolumn=80				" Highlight the 80th character limit
 set display=lastline
 
 " Do not display completion messages
