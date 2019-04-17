@@ -265,6 +265,8 @@ Name           | Description
 [junegunn/limelight] | Hyperfocus-writing
 [itchyny/calendar.vim] | Calendar application
 [vimwiki/vimwiki] | Personal Wiki for Vim
+[mhinz/vim-startify] | Vim start page
+[wellle/visual-split.vim] | Resize pane based on buffer content
 
 ### Completion
 
@@ -289,6 +291,8 @@ Name           | Description
 [fszymanski/deoplete-emoji] | Deoplete source for emoji codes
 [juliosueiras/vim-terraform-completion] | Autocompletion and linter for Terraform
 [ternjs/tern_for_vim] | Provides Tern-based JavaScript editing support
+[autozimu/LanguageClient-neovim] | Provides LanguageServer based completion
+[tbodt/deoplete-tabnine] | Provides TabNine completion with deoplete
 
 ### Denite
 
@@ -484,6 +488,8 @@ Key   | Mode | Action
 Arrows | Normal | Resize splits (* Enable `g:elite_mode` in `.vault.vim`)
 `Backspace` | Normal | Match bracket (%)
 `K` | Normal | Open Zeal or Dash on some file types (except Python+Vim script)
+`K` | Visual | Move selected line Up
+`J` | Visual | Move selected line Down
 `Y` | Normal | Yank to the end of line (y$)
 `<Return>` | Normal | Toggle fold (za)
 `S`+`<Return>` | Normal | Focus the current fold by closing all others (zMza)
@@ -523,6 +529,9 @@ Arrows | Normal | Resize splits (* Enable `g:elite_mode` in `.vault.vim`)
 `<leader>`+`d` | Normal/Visual | Duplicate line or selection
 `<leader>`+`S` | Normal/Visual | Source selection
 `<leader>`+`ml` | Normal | Append modeline
+`<A>`+`a` | Normal | Decrease number (<C-x>)
+`<A>`+`k` | Normal | Add new line above retaining current position
+`<A>`+`j` | Normal | Add new line below retaining current position
 
 ### File Operations
 
@@ -530,6 +539,7 @@ Key   | Mode | Action
 ----- |:----:| ------------------
 `<leader>`+`cd` | Normal | Switch to the directory of opened buffer (:lcd %:p:h)
 `<leader>`+`w` | Normal/visual | Write (:w)
+`<leader>`+`ww` | Normal/visual | Force Write (:w!)
 `<leader>`+`y` / `<leader>`+`Y` | Normal | Copy (relative / absolute) file-path to clipboard
 `Ctrl`+`s` | _All_ | Write (:w)
 `W!!` | Command | Write as root
@@ -576,6 +586,8 @@ Key   | Mode | Action
 `s`+`Q` | Normal | Removes current buffer (:bdelete)
 `<leader>`+`sv` | Normal | Split with previous buffer
 `<leader>`+`sg` | Normal | Vertical split with previous buffer
+`<leader>`+`z` | Normal | Zoom current pane
+`<leader>`+`zz` | Normal | Reset pane level
 
 ### Plugin: Denite
 
