@@ -171,6 +171,24 @@ nnoremap <silent> <C-S-Tab> :<C-U>tabprevious<CR>
 let g:lasttab = 1
 nmap <silent> \\ :execute 'tabn '.g:lasttab<CR>
 
+" Panes
+
+" Remap to use Alt for panes nav for better intergration with tmux
+map <A-j> <C-j>
+map <A-k> <C-k>
+map <A-l> <C-l>
+map <A-h> <C-h>
+
+" Remap C-W to Leader-W for pane manipulation
+nnoremap <Leader>z <C-w>
+
+" zoom panels
+nnoremap <Leader>z. <C-w>5>
+nnoremap <Leader>z, <C-w>5<
+nnoremap <Leader>z> <C-w>25>
+nnoremap <Leader>z< <C-w>25<
+noremap <Leader>z <c-w>_ \| <c-w>\|
+noremap <Leader>zz <c-w>=
 
 " }}}
 " Totally Custom {{{
