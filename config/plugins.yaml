@@ -360,6 +360,8 @@
 
 - repo: mhinz/vim-startify
 
+- repo: wellle/visual-split.vim
+
 # ==========================================
 # Completion
 # ----------
