@@ -190,9 +190,32 @@ nnoremap <Leader>z< <C-w>25<
 noremap <Leader>z <c-w>_ \| <c-w>\|
 noremap <Leader>zz <c-w>=
 
+au! WinEnter * call SetWinAdjust()
+function! SetWinAdjust()
+   if winnr() > 1
+			nnoremap <Leader>zh <C-w>10>
+			nnoremap <Leader>zj <C-w>10-
+			nnoremap <Leader>zk <C-w>10+
+			nnoremap <Leader>zl <C-w>10<
+      nnoremap <C-Right> <C-w><
+      nnoremap <C-Left> <C-w>>
+   else
+			nnoremap <Leader>zh <C-w>10<
+			nnoremap <Leader>zj <C-w>10+
+			nnoremap <Leader>zk <C-w>10-
+			nnoremap <Leader>zl <C-w>10>
+      nnoremap <C-Right> <C-w>>
+      nnoremap <C-Left> <C-w><
+   endif
+ endfunction
+
 " }}}
 " Totally Custom {{{
 " --------------
+
+" Add new lines
+nnoremap <silent><A-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
+nnoremap <silent><A-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
 
 " Remove spaces at the end of lines
 nnoremap <silent> ,<Space> :<C-u>silent! keeppatterns %substitute/\s\+$//e<CR>
