@@ -248,6 +248,8 @@
   hook_add: |
     let g:vrc_set_default_mapping = 0
 
+- repo: jremmen/vim-ripgrep
+
 # ==========================================
 # Interface
 # ---------
