@@ -365,27 +365,26 @@ if dein#tap('vim-easymotion')
 	map  sn <Plug>(easymotion-next)
 	map  sp <Plug>(easymotion-prev)
 
-function! s:incsearch_config(...) abort
-  return incsearch#util#deepextend(deepcopy({
-  \   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
-  \   'keymap': {
-  \     "\<CR>": '<Over>(easymotion)'
-  \   },
-  \   'is_expr': 0
-  \ }), get(a:, 1, {}))
-endfunction
+	function! s:incsearch_config(...) abort
+		return incsearch#util#deepextend(deepcopy({
+		\   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
+		\   'keymap': {
+		\     "\<CR>": '<Over>(easymotion)'
+		\   },
+		\   'is_expr': 0
+		\ }), get(a:, 1, {}))
+	endfunction
 
-function! s:config_easyfuzzymotion(...) abort
-  return extend(copy({
-  \   'converters': [incsearch#config#fuzzyword#converter()],
-  \   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
-  \   'keymap': {"\<CR>": '<Over>(easymotion)'},
-  \   'is_expr': 0,
-  \   'is_stay': 1
-  \ }), get(a:, 1, {}))
-endfunction
+	function! s:config_easyfuzzymotion(...) abort
+		return extend(copy({
+		\   'converters': [incsearch#config#fuzzyword#converter()],
+		\   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
+		\   'keymap': {"\<CR>": '<Over>(easymotion)'},
+		\   'is_expr': 0,
+		\   'is_stay': 1
+		\ }), get(a:, 1, {}))
+	endfunction
 
-noremap <silent><expr> <Leader>/ incsearch#go(<SID>config_easyfuzzymotion())
 endif
 
 if dein#tap('vim-textobj-multiblock')

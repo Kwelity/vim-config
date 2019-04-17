@@ -193,17 +193,17 @@ noremap <Leader>zz <c-w>=
 au! WinEnter * call SetWinAdjust()
 function! SetWinAdjust()
    if winnr() > 1
-			nnoremap <Leader>zh <C-w>10>
-			nnoremap <Leader>zj <C-w>10-
-			nnoremap <Leader>zk <C-w>10+
-			nnoremap <Leader>zl <C-w>10<
+      nnoremap <Leader>zh <C-w>10>
+      nnoremap <Leader>zj <C-w>10-
+      nnoremap <Leader>zk <C-w>10+
+      nnoremap <Leader>zl <C-w>10<
       nnoremap <C-Right> <C-w><
       nnoremap <C-Left> <C-w>>
    else
-			nnoremap <Leader>zh <C-w>10<
-			nnoremap <Leader>zj <C-w>10+
-			nnoremap <Leader>zk <C-w>10-
-			nnoremap <Leader>zl <C-w>10>
+      nnoremap <Leader>zh <C-w>10<
+      nnoremap <Leader>zj <C-w>10+
+      nnoremap <Leader>zk <C-w>10-
+      nnoremap <Leader>zl <C-w>10>
       nnoremap <C-Right> <C-w>>
       nnoremap <C-Left> <C-w><
    endif
@@ -212,6 +212,9 @@ function! SetWinAdjust()
 " }}}
 " Totally Custom {{{
 " --------------
+
+" remap _ to blackhole registry
+nnoremap _ "_
 
 " remap decrease number to A-a
 nnoremap <A-a> <C-x>
