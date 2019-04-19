@@ -171,7 +171,7 @@ nnoremap <silent> <C-S-Tab> :<C-U>tabprevious<CR>
 let g:lasttab = 1
 nmap <silent> \\ :execute 'tabn '.g:lasttab<CR>
 
-" Panes
+" Splits
 
 " Remap to use Alt for panes nav for better intergration with tmux
 map <A-j> <C-j>
