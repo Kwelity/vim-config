@@ -22,7 +22,8 @@ if dein#tap('denite.nvim')
 	nnoremap <silent><LocalLeader>h :<C-u>Denite help<CR>
 	nnoremap <silent><LocalLeader>m :<C-u>Denite file/rec -buffer-name=memo -path=~/docs/books<CR>
 	" nnoremap <silent><LocalLeader>m :<C-u>Denite mpc -buffer-name=mpc<CR>
-	nnoremap <silent><LocalLeader>z :<C-u>Denite z -buffer-name=jump<CR>
+	" nnoremap <silent><LocalLeader>z :<C-u>Denite z -buffer-name=jump<CR>
+	nnoremap <silent><LocalLeader>z :<C-u>Denite fasd<CR>
 	nnoremap <silent><LocalLeader>/ :<C-u>Denite line -buffer-name=search -auto-highlight<CR>
 	nnoremap <silent><LocalLeader>* :<C-u>DeniteCursorWord line -buffer-name=search -auto-highlight -mode=normal<CR>
 	nnoremap <silent><LocalLeader>; :<C-u>Denite command command_history<CR>
@@ -48,9 +49,13 @@ if dein#tap('denite.nvim')
 	endfunction "}}}
 endif
 
-if dein#tap('vim-denite-z')
-	command! -nargs=+ -complete=file Z
-		\ call denite#start([{'name': 'z', 'args': [<q-args>], {'immediately': 1}}])
+" if dein#tap('vim-denite-z')
+if dein#tap('denite-fasd')
+	" command! -nargs=+ -complete=file Z
+		"\ call denite#start([{'name': 'z', 'args': [<q-args>], {'immediately': 1}}])
+		"\ call denite#start([{'name': 'fasd', 'args': [<q-args>], {'immediately': 1}}])
+		"\ call denite#start([{'name': 'fasd:docker'}])
+		Denite fasd:docker
 endif
 
 if dein#tap('tagbar')
@@ -364,30 +369,29 @@ if dein#tap('vim-easymotion')
 	omap s/ <Plug>(easymotion-tn)
 	map  sn <Plug>(easymotion-next)
 	map  sp <Plug>(easymotion-prev)
-
-	function! s:incsearch_config(...) abort
-		return incsearch#util#deepextend(deepcopy({
-		\   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
-		\   'keymap': {
-		\     "\<CR>": '<Over>(easymotion)'
-		\   },
-		\   'is_expr': 0
-		\ }), get(a:, 1, {}))
-	endfunction
-
-	function! s:config_easyfuzzymotion(...) abort
-		return extend(copy({
-		\   'converters': [incsearch#config#fuzzyword#converter()],
-		\   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
-		\   'keymap': {"\<CR>": '<Over>(easymotion)'},
-		\   'is_expr': 0,
-		\   'is_stay': 1
-		\ }), get(a:, 1, {}))
-	endfunction
-
-	noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
-
 endif
+
+function! s:incsearch_config(...) abort
+	return incsearch#util#deepextend(deepcopy({
+	\   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
+	\   'keymap': {
+	\     "\<CR>": '<Over>(easymotion)'
+	\   },
+	\   'is_expr': 0
+	\ }), get(a:, 1, {}))
+endfunction
+
+function! s:config_easyfuzzymotion(...) abort
+	return extend(copy({
+	\   'converters': [incsearch#config#fuzzyword#converter()],
+	\   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
+	\   'keymap': {"\<CR>": '<Over>(easymotion)'},
+	\   'is_expr': 0,
+	\   'is_stay': 1
+	\ }), get(a:, 1, {}))
+endfunction
+
+noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
 
 if dein#tap('vim-textobj-multiblock')
 	omap <silent> ab <Plug>(textobj-multiblock-a)
