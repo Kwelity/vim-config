@@ -29,7 +29,7 @@ endif
 
 " SORTERS
 " Default is 'sorter/rank'
-call denite#custom#source('z', 'sorters', ['sorter_z'])
+" call denite#custom#source('z', 'sorters', ['sorter_z'])
 
 " CONVERTERS
 " Default is none
@@ -38,7 +38,29 @@ call denite#custom#source(
 	\ 'converters', ['converter_relative_word'])
 
 " FIND and GREP COMMANDS
-if executable('ag')
+if executable('rg')
+" Ripgrep
+call denite#custom#var('file/rec', 'command',
+			\ ['rg', '--files', '--glob', '!.git'])
+call denite#custom#var('grep', 'command', ['rg', '--threads', '1'])
+call denite#custom#var('grep', 'recursive_opts', [])
+call denite#custom#var('grep', 'final_opts', [])
+call denite#custom#var('grep', 'separator', ['--'])
+call denite#custom#var('grep', 'default_opts',
+			\ ['-i', '--vimgrep', '--no-heading'])
+
+elseif executable('ack')
+	" Ack command
+	call denite#custom#var('grep', 'command', ['ack'])
+	call denite#custom#var('grep', 'recursive_opts', [])
+	call denite#custom#var('grep', 'pattern_opt', ['--match'])
+	call denite#custom#var('grep', 'separator', ['--'])
+	call denite#custom#var('grep', 'final_opts', [])
+	call denite#custom#var('grep', 'default_opts',
+			\ ['--ackrc', $HOME.'/.config/ackrc', '-H',
+			\ '--nopager', '--nocolor', '--nogroup', '--column'])
+
+elseif executable('ag')
 	" The Silver Searcher
 	call denite#custom#var('file/rec', 'command',
 		\ ['ag', '-U', '--hidden', '--follow', '--nocolor', '--nogroup', '-g', ''])
@@ -53,28 +75,6 @@ if executable('ag')
 	call denite#custom#var('grep', 'final_opts', [])
 	call denite#custom#var('grep', 'default_opts',
 		\ [ '--skip-vcs-ignores', '--vimgrep', '--smart-case', '--hidden' ])
-
-elseif executable('ack')
-	" Ack command
-	call denite#custom#var('grep', 'command', ['ack'])
-	call denite#custom#var('grep', 'recursive_opts', [])
-	call denite#custom#var('grep', 'pattern_opt', ['--match'])
-	call denite#custom#var('grep', 'separator', ['--'])
-	call denite#custom#var('grep', 'final_opts', [])
-	call denite#custom#var('grep', 'default_opts',
-			\ ['--ackrc', $HOME.'/.config/ackrc', '-H',
-			\ '--nopager', '--nocolor', '--nogroup', '--column'])
-
-elseif executable('rg')
-	" Ripgrep
-  call denite#custom#var('file/rec', 'command',
-        \ ['rg', '--files', '--glob', '!.git'])
-  call denite#custom#var('grep', 'command', ['rg', '--threads', '1'])
-  call denite#custom#var('grep', 'recursive_opts', [])
-  call denite#custom#var('grep', 'final_opts', [])
-  call denite#custom#var('grep', 'separator', ['--'])
-  call denite#custom#var('grep', 'default_opts',
-        \ ['-i', '--vimgrep', '--no-heading'])
 endif
 
 " KEY MAPPINGS
