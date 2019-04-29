@@ -49,15 +49,6 @@ if dein#tap('denite.nvim')
 	endfunction "}}}
 endif
 
-" if dein#tap('vim-denite-z')
-if dein#tap('denite-fasd')
-	" command! -nargs=+ -complete=file Z
-		"\ call denite#start([{'name': 'z', 'args': [<q-args>], {'immediately': 1}}])
-		"\ call denite#start([{'name': 'fasd', 'args': [<q-args>], {'immediately': 1}}])
-		"\ call denite#start([{'name': 'fasd:docker'}])
-		Denite fasd:docker
-endif
-
 if dein#tap('tagbar')
 	nnoremap <silent> <Leader>o   :<C-u>TagbarOpenAutoClose<CR>
 

@@ -294,4 +294,11 @@ let g:choosewin_color_overlay_current = {
 	\ 'cterm': [ 72, 64 ], 'gui': [ '#7BB292' ] }
 " }}}
 
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#wordcount#enabled = 1
+let g:airline#extensions#wordcount#filetypes = '\vnotes|help|markdown|rst|org|text|asciidoc|tex|mail'
+let g:airline_theme='lucius'
+
+let g:airline#extensions#tabline#enabled = 1
+
 " vim: set foldmethod=marker ts=2 sw=0 tw=80 noet :
