@@ -66,7 +66,7 @@ let &tabline='%!Tabline()'
 
 " Statusline {{{
 let s:stl  = " %7*%{&paste ? '=' : ''}%*"         " Paste symbol
-let s:stl .= "%4*%{&readonly ? '' : '#'}%*"       " Modifide symbol
+let s:stl .= "%4*%{&readonly ? '' : '#'}%*"       " Modified symbol
 let s:stl .= "%6*%{badge#mode('⚠ ', 'Z')}"        " Read-only symbol
 let s:stl .= '%*%n'                               " Buffer number
 let s:stl .= "%6*%{badge#modified('+')}%0*"       " Write symbol
@@ -143,24 +143,24 @@ highlight! WarningMsg ctermfg=100 guifg=#CCC566
 " Plugin: Defx icons and highlights {{{
 " ---------------------------------------------------------
 let g:defx_git#indicators = {
-	\ 'Modified'  : 'M',
-	\ 'Staged'    : 'm',
-	\ 'Untracked' : '?',
-	\ 'Renamed'   : '≫',
-	\ 'Unmerged'  : 'u',
-	\ 'Ignored'   : 'i',
-	\ 'Deleted'   : '✖',
-	\ 'Unknown'   : '⁇'
+    \ 'Modified'  : '•',
+    \ 'Staged'    : '✚',
+    \ 'Untracked' : 'ᵁ',
+		\ 'Renamed'   : '≫',
+		\ 'Unmerged'  : '≠',
+		\ 'Ignored'   : 'ⁱ',
+		\ 'Deleted'   : '✖',
+		\ 'Unknown'   : '⁇'
 	\ }
 
-hi Defx_git_Untracked ctermfg=12 guifg=#81a2be
-hi Defx_git_Ignored   ctermfg=8  guifg=#404660
-hi Defx_git_Unknown   ctermfg=3  guifg=#f0c674
-hi Defx_git_Renamed   ctermfg=3  guifg=#de935f
-hi Defx_git_Modified  ctermfg=9  guifg=#cc6666
-hi Defx_git_Unmerged  ctermfg=14 guifg=#8abeb7
-hi Defx_git_Deleted   ctermfg=13 guifg=#b294bb
-hi Defx_git_Staged    ctermfg=10 guifg=#b5bd68
+highlight Defx_filename_3_Modified  ctermfg=1  guifg=#D370A3
+highlight Defx_filename_3_Staged    ctermfg=10 guifg=#A3D572
+highlight Defx_filename_3_Ignored   ctermfg=8  guifg=#404660
+highlight def link Defx_filename_3_Untracked Comment
+highlight def link Defx_filename_3_Unknown Comment
+highlight def link Defx_filename_3_Renamed Title
+highlight def link Defx_filename_3_Unmerged Label
+" highlight Defx_git_Deleted   ctermfg=13 guifg=#b294bb
 
 " Plugin: NERDTree icons and highlights {{{
 " ---------------------------------------------------------
