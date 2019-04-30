@@ -58,8 +58,10 @@ if dein#tap('tagbar')
 endif
 
 if dein#tap('defx.nvim')
-	nnoremap <silent> <Leader>f
+	nnoremap <silent> <LocalLeader>e
 		\ :<C-u>Defx -resume -toggle -buffer-name=tab`tabpagenr()`<CR>
+	nnoremap <silent> <LocalLeader>a
+		\ :<C-u>Defx -resume -toggle -buffer-name=tab`tabpagenr()` -search=`expand('%:p')`<CR>
 endif
 
 if dein#tap('nerdtree')
@@ -72,10 +74,10 @@ if dein#tap('nerdtree')
 	let g:NERDTreeMapCloseChildren = 'T'
 	let g:NERDTreeMapToggleHidden = '.'
 
-	nnoremap <silent> <LocalLeader>e :<C-u>let NERDTreeWinPos=0 \| NERDTreeToggle<CR>
-	nnoremap <silent> <LocalLeader>a :<C-u>let NERDTreeWinPos=0 \| NERDTreeFind<CR>
-	nnoremap <silent> <LocalLeader>E :<C-u>let NERDTreeWinPos=1 \| NERDTreeToggle<CR>
-	nnoremap <silent> <LocalLeader>A :<C-u>let NERDTreeWinPos=1 \| NERDTreeFind<CR>
+	nnoremap <silent> <Leader>e :<C-u>let NERDTreeWinPos=0 \| NERDTreeToggle<CR>
+	" nnoremap <silent> <LocalLeader>a :<C-u>let NERDTreeWinPos=0 \| NERDTreeFind<CR>
+	" nnoremap <silent> <LocalLeader>E :<C-u>let NERDTreeWinPos=1 \| NERDTreeToggle<CR>
+	" nnoremap <silent> <LocalLeader>A :<C-u>let NERDTreeWinPos=1 \| NERDTreeFind<CR>
 endif
 
 if dein#tap('neosnippet.vim')
