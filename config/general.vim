@@ -153,10 +153,6 @@ if has('patch-7.4.775')
 	set completeopt+=noinsert
 endif
 
-if has('patch-8.1.0360')
-	set diffopt+=internal,algorithm:patience
-endif
-
 if exists('+inccommand')
 	set inccommand=nosplit
 endif

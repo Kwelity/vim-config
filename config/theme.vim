@@ -25,6 +25,18 @@ function! s:theme_reload(name)
 	endif
 endfunction
 
+augroup aug_color_scheme
+  au!
+
+  autocmd ColorScheme hybrid call s:PatchColorScheme()
+augroup END
+
+function s:PatchColorScheme()
+  hi! link DiffChange NONE
+  hi! clear DiffChange
+  hi! DiffText term=NONE ctermfg=215 ctermbg=233 cterm=NONE guifg=#FFB86C guibg=#14141a gui=NONE
+endfunction
+
 " THEME NAME
 let g:theme_name = 'daf-2019'
 autocmd MyAutoCmd ColorScheme * call s:theme_reload(g:theme_name)
