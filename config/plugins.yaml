@@ -270,7 +270,8 @@
 - repo: jremmen/vim-ripgrep
 
 - repo: lfilho/cosco.vim
-  hook_add:	autocmd FileType javascript,css,rust nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
+  hook_add: |
+    nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
 
 - repo: lotabout/skim.vim
 
