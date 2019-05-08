@@ -213,6 +213,14 @@
 
 - { repo: tyru/caw.vim, on_map: { nx: <Plug> }}
 
+- repo: tpope/vim-abolish
+
+- repo: junegunn/vim-easy-align
+
+- repo: junegunn/gv.vim
+
+- repo: junegunn/rainbow_parentheses.vim
+
 # - { repo: tpope/vim-commentary, on_map: <Plug>Commentary }
 
 - repo: Shougo/vinarise.vim

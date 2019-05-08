@@ -404,4 +404,16 @@ if dein#tap('vim-rest-console')
 	noremap <Leader>r :call VrcQuery()<CR>
 endif
 
+if dein#tap('vim-easy-align')
+	" Start interactive EasyAlign in visual mode (e.g. vipga)
+	xmap ga <Plug>(EasyAlign)
+
+	" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+	nmap ga <Plug>(EasyAlign)
+endif
+
+if dein#tap('rainbow_parentheses.vim')
+	let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+endif
+
 " vim: set ts=2 sw=2 tw=80 noet :
