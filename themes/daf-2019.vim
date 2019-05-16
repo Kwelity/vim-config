@@ -111,7 +111,7 @@ highlight User8 guifg=#ffb964 guibg=#30302c ctermfg=215 ctermbg=236
 " }}}
 
 let s:disable_statusline =
-	\ 'denite\|defx\|tagbar\|nerdtree\|undotree\|diff\|peekaboo\|sidemenu'
+	\ 'denite\|defx\|tagbar\|nerdtree\|undotree\|diff\|peekaboo\|sidemenu\|color_column'
 
 " Toggle Statusline {{{
 augroup statusline
@@ -293,6 +293,12 @@ let g:choosewin_color_overlay = {
 let g:choosewin_color_overlay_current = {
 	\ 'cterm': [ 72, 64 ], 'gui': [ '#7BB292' ] }
 " }}}
+
+hi LineNr guifg=#969696
+hi Normal guibg=NONE ctermbg=NONE
+hi ColorColumn guibg=#464849 ctermbg=None
+
+hi CursorLine   cterm=NONE guibg=#464849
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#wordcount#enabled = 1
