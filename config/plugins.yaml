@@ -288,6 +288,8 @@
 - { repo: t9md/vim-quickhl, on_map: { nv: <Plug> }}
 - { repo: rafi/vim-sidemenu, on_map: { nv: <Plug> }}
 
+- repo: samoshkin/vim-mergetool
+
 - repo: vim-airline/vim-airline
 - repo: vim-airline/vim-airline-themes
 - repo: emilyst/match-count-statusline
