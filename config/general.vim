@@ -183,6 +183,13 @@ set cmdwinheight=5				" Command-line lines
 set noequalalways					" Don't resize windows on split or close
 set laststatus=2					" Always show a status line
 set colorcolumn=80				" Highlight the 80th character limit
+
+augroup BgHighlight
+    autocmd!
+    autocmd WinEnter * set colorcolumn=80
+    autocmd WinLeave * set colorcolumn=0
+augroup END
+
 set display=lastline
 
 " Do not display completion messages
