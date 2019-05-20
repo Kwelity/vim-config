@@ -289,6 +289,8 @@
 - { repo: rafi/vim-sidemenu, on_map: { nv: <Plug> }}
 - { repo: severin-lemaignan/vim-minimap }
 
+- repo: samoshkin/vim-mergetool
+
 - repo: vim-airline/vim-airline
 - repo: vim-airline/vim-airline-themes
 - repo: emilyst/match-count-statusline
