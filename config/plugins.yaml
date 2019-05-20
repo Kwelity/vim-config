@@ -287,6 +287,7 @@
 - { repo: haya14busa/vim-edgemotion, on_map: { nv: <Plug> }}
 - { repo: t9md/vim-quickhl, on_map: { nv: <Plug> }}
 - { repo: rafi/vim-sidemenu, on_map: { nv: <Plug> }}
+- { repo: severin-lemaignan/vim-minimap }
 
 - repo: vim-airline/vim-airline
 - repo: vim-airline/vim-airline-themes
