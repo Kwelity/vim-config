@@ -54,6 +54,13 @@ if dein#tap('tagbar')
 	" Also use h/l to open/close folds
 	let g:tagbar_map_closefold = ['h', '-', 'zc']
 	let g:tagbar_map_openfold = ['l', '+', 'zo']
+	let g:tagbar_type_ansible = {
+		\ 'ctagstype' : 'ansible',
+		\ 'kinds' : [
+			\ 't:tasks'
+		\ ],
+		\ 'sort' : 0
+	\ }
 endif
 
 if dein#tap('defx.nvim')
@@ -80,8 +87,8 @@ if dein#tap('nerdtree')
 endif
 
 if dein#tap('neosnippet.vim')
-	imap <expr><C-o> neosnippet#expandable_or_jumpable()
-		\ ? "\<Plug>(neosnippet_expand_or_jump)" : "\<ESC>o"
+	" imap <expr><C-o> neosnippet#expandable_or_jumpable()
+	"	\ ? "\<Plug>(neosnippet_expand_or_jump)" : "\<ESC>o"
 	xmap <silent><C-s> <Plug>(neosnippet_register_oneshot_snippet)
 	smap <silent>L     <Plug>(neosnippet_jump_or_expand)
 	xmap <silent>L     <Plug>(neosnippet_expand_target)
@@ -143,14 +150,14 @@ if dein#tap('vim-indent-guides')
 	nmap <silent><Leader>ti :<C-u>IndentGuidesToggle<CR>
 endif
 
-if dein#tap('vim-bookmarks')
-	nmap ma :<C-u>cgetexpr bm#location_list()<CR>
-		\ :<C-u>Denite quickfix -buffer-name=list<CR>
-	nmap mn <Plug>BookmarkNext
-	nmap mp <Plug>BookmarkPrev
-	nmap mm <Plug>BookmarkToggle
-	nmap mi <Plug>BookmarkAnnotate
-endif
+" if dein#tap('vim-bookmarks')
+" 	nmap ma :<C-u>cgetexpr bm#location_list()<CR>
+"		\ :<C-u>Denite quickfix -buffer-name=list<CR>
+" 	nmap mn <Plug>BookmarkNext
+" 	nmap mp <Plug>BookmarkPrev
+" 	nmap mm <Plug>BookmarkToggle
+" 	nmap mi <Plug>BookmarkAnnotate
+" endif
 
 if dein#tap('auto-git-diff')
 	autocmd MyAutoCmd FileType gitrebase
@@ -383,7 +390,6 @@ function! s:config_easyfuzzymotion(...) abort
 	\ }), get(a:, 1, {}))
 endfunction
 
-noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
 
 if dein#tap('vim-textobj-multiblock')
 	omap <silent> ab <Plug>(textobj-multiblock-a)

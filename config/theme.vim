@@ -28,7 +28,8 @@ endfunction
 augroup aug_color_scheme
   au!
 
-  autocmd ColorScheme hybrid call s:PatchColorScheme()
+  " autocmd ColorScheme hybrid call s:PatchColorScheme()
+  autocmd ColorScheme forest-night call s:PatchColorScheme()
 augroup END
 
 function s:PatchColorScheme()
@@ -46,7 +47,8 @@ let s:cache = $VARPATH.'/theme.txt'
 if ! exists('g:colors_name')
 	set background=dark
 	execute 'colorscheme'
-		\ filereadable(s:cache) ? readfile(s:cache)[0] : 'hybrid'
+		"\ filereadable(s:cache) ? readfile(s:cache)[0] : 'hybrid'
+		\ filereadable(s:cache) ? readfile(s:cache)[0] : 'forest-night'
 endif
 
 " vim: set ts=2 sw=2 tw=80 noet :
