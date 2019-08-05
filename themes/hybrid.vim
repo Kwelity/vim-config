@@ -11,6 +11,8 @@ if has('gui_running')
 endif
 " }}}
 
+highlight Normal guibg=NONE ctermbg=NONE
+
 " Tabline {{{
 " ---------------------------------------------------------
 " TabLineFill: Tab pages line, where there are no labels
