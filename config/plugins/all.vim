@@ -55,21 +55,24 @@ if dein#tap('defx.nvim')
 		\ :<C-u>Defx -resume -buffer-name=tab`tabpagenr()` -search=`expand('%:p')`<CR>
 endif
 
-if dein#tap('tagbar')
-	" Also use h/l to open/close folds
-	let g:tagbar_map_closefold = ['h', '-', 'zc']
-	let g:tagbar_map_openfold = ['l', '+', 'zo']
-	let g:tagbar_type_ansible = {
-		\ 'ctagstype' : 'ansible',
-		\ 'kinds' : [
-			\ 't:tasks'
-		\ ],
-		\ 'sort' : 0
-	\ }
-endif
+" if dein#tap('tagbar')
+" 	" Also use h/l to open/close folds
+" 	let g:tagbar_map_closefold = ['h', '-', 'zc']
+" 	let g:tagbar_map_openfold = ['l', '+', 'zo']
+" 	let g:tagbar_type_ansible = {
+"		\ 'ctagstype' : 'ansible',
+"		\ 'kinds' : [
+"			\ 't:tasks'
+"		\ ],
+"		\ 'sort' : 0
+"	\ }
+" endif
 
 if dein#tap('vista.vim')
-	nnoremap <silent> <Leader>o :<C-u>Vista<CR>
+	let g:vista_executive_for = {
+		\ 'rust': 'lcn',
+		\ }
+	nnoremap <silent> <Leader>o :<C-u>Vista!!<CR>
 endif
 
 if dein#tap('neosnippet.vim')
