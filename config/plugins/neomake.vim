@@ -1,12 +1,14 @@
 
 " Neomake
 " ---------
-let g:neomake_open_list = 0
-let g:neomake_verbose = 1
-
 if ! empty(g:python3_host_prog)
 	let g:neomake_python_python_exe = g:python3_host_prog
 endif
+
+" augroup user_plugin_neomake
+" 	autocmd!
+" 	autocmd BufWritePre *.js call s:set_javascript_exe()
+" augroup END
 
 " YAML / ANSIBLE
 let g:neomake_yaml_enabled_makers = ['yamllint']
@@ -15,7 +17,7 @@ let g:neomake_ansible_yamllint_maker = neomake#makers#ft#yaml#yamllint()
 let g:neomake_yamllint_line_length = 100
 
 " SHELL
-let g:neomake_shellcheck_args = ['-fgcc']
+let g:neomake_shellcheck_args = ['-xfgcc']
 
 " JAVASCRIPT / JSX
 function! s:set_javascript_exe()
@@ -49,7 +51,4 @@ function! s:find_node_executable(cmd)
 	return ''
 endfunction
 
-autocmd MyAutoCmd BufWritePre *.js call s:set_javascript_exe()
-call s:set_javascript_exe()
-
-" vim: set foldmethod=marker ts=2 sw=2 tw=80 noet :
+" vim: set ts=2 sw=2 tw=80 noet :

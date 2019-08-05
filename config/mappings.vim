@@ -1,6 +1,5 @@
-
 " Key-mappings
-"---------------------------------------------------------
+" ---
 
 " Non-standard {{{
 " ------------
@@ -61,6 +60,7 @@ cnoreabbrev qw wq
 cnoreabbrev Wq wq
 cnoreabbrev WQ wq
 cnoreabbrev Qa qa
+cnoreabbrev Q q
 cnoreabbrev Bd bd
 cnoreabbrev bD bd
 
@@ -68,7 +68,7 @@ cnoreabbrev bD bd
 inoremap <S-Return> <C-o>o
 
 " Quick substitute within selected area
-xnoremap s :s//g<Left><Left>
+xnoremap sg :s//g<Left><Left>
 
 nnoremap zl z5l
 nnoremap zh z5h
@@ -80,8 +80,8 @@ noremap <expr> <C-f> max([winheight(0) - 2, 1])
 	\ ."\<C-d>".(line('w$') >= line('$') ? "L" : "M")
 noremap <expr> <C-b> max([winheight(0) - 2, 1])
 	\ ."\<C-u>".(line('w0') <= 1 ? "H" : "M")
-noremap <expr> <C-e> (line("w$") >= line('$') ? "j" : "3\<C-e>")
-noremap <expr> <C-y> (line("w0") <= 1         ? "k" : "3\<C-y>")
+noremap <expr> <C-e> (line("w$") >= line('$') ? "j" : "5\<C-e>")
+noremap <expr> <C-y> (line("w0") <= 1         ? "k" : "5\<C-y>")
 
 " Window control
 nnoremap <C-q> <C-w>
@@ -93,8 +93,8 @@ xnoremap < <gv
 xnoremap > >gv|
 
 " Use tab for indenting
-vnoremap <Tab> >gv|
-vnoremap <S-Tab> <gv
+xnoremap <Tab> >gv|
+xnoremap <S-Tab> <gv
 nmap >>  >>_
 nmap <<  <<_
 
@@ -102,17 +102,22 @@ nmap <<  <<_
 nnoremap <expr> gp '`['.strpart(getregtype(), 0, 1).'`]'
 
 " Navigation in command line
-cnoremap <C-h> <Home>
+" cnoremap <C-h> <Home>
 cnoremap <C-l> <End>
 cnoremap <C-f> <Right>
 cnoremap <C-b> <Left>
 cnoremap <C-d> <C-w>
+
 
 " Switch history search pairs, matching my bash shell
 cnoremap <C-p>  <Up>
 cnoremap <C-n>  <Down>
 cnoremap <Up>   <C-p>
 cnoremap <Down> <C-n>
+
+" Fuzzy search
+map z/ <Plug>(incsearch-fuzzy-/)
+noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
 
 " }}}
 " File operations {{{
@@ -139,7 +144,6 @@ cmap W!! w !sudo tee % >/dev/null
 
 " I like to :quit with 'q', shrug.
 nnoremap <silent> q :<C-u>:quit<CR>
-autocmd MyAutoCmd FileType man nnoremap <silent><buffer> q :<C-u>:quit<CR>
 
 " Macros
 nnoremap Q q
@@ -209,19 +213,41 @@ function! SetWinAdjust()
    endif
  endfunction
 
+let t:is_transparent = 1
+function! Toggle_transparent()
+    if t:is_transparent == 0
+        hi Normal guibg=NONE ctermbg=NONE
+        let t:is_transparent = 1
+    else
+        hi Normal guibg=#191a1c ctermbg=NONE
+        let t:is_tranparent = 0
+    endif
+endfunction
+nnoremap <C-t> : call Toggle_transparent()<CR>
+
 " }}}
 " Totally Custom {{{
 " --------------
 
-" remap _ to blackhole registry
+" remap _ to blackhole register
 nnoremap _ "_
+
+" clear all global registers
+function! s:clear_registers()
+	let regs=split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', '\zs')
+	for r in regs
+		call setreg(r, [])
+	endfor
+endfunction
+
+command! ClearRegisters :call s:clear_registers()
 
 " remap decrease number to A-a
 " nnoremap <A-a> <C-x>
 
 " Add new lines
-nnoremap <silent><A-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
-nnoremap <silent><A-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
+" nnoremap <silent><A-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
+" nnoremap <silent><A-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
 
 " Remove spaces at the end of lines
 nnoremap <silent> ,<Space> :<C-u>silent! keeppatterns %substitute/\s\+$//e<CR>
@@ -279,9 +305,11 @@ function! s:toggle_contrast(delta)
 	endif
 endfunction
 
-" Location list movement
-nmap <Leader>j :lnext<CR>
-nmap <Leader>k :lprev<CR>
+" Location/quickfix list movement
+nmap ]c :lnext<CR>
+nmap [c :lprev<CR>
+nmap ]q :cnext<CR>
+nmap [q :cprev<CR>
 
 " Duplicate lines
 nnoremap <Leader>d m`YP``
@@ -305,34 +333,25 @@ noremap  mj :m+<CR>
 vnoremap J :m'>+<CR>gv=gv
 vnoremap K :m-2<CR>gv=gv
 
-" Session management shortcuts
-nmap <silent> <Leader>se :<C-u>execute 'SessionSave' fnamemodify(resolve(getcwd()), ':p:gs?/?_?')<CR>
-nmap <silent> <Leader>os :<C-u>execute 'source '.g:session_directory.'/'.fnamemodify(resolve(getcwd()), ':p:gs?/?_?').'.vim'<CR>
+" Context-aware action-menu, neovim only (see plugin/actionmenu.vim)
+if has('nvim')
+	nmap <silent> <LocalLeader>c :<C-u>ActionMenu<CR>
+endif
+
+" Session management shortcuts (see plugin/sessions.vim)
+nmap <silent> <Leader>se :<C-u>SessionSave<CR>
+nmap <silent> <Leader>os :<C-u>SessionLoad<CR>
 
 if has('mac')
 	" Open the macOS dictionary on current word
 	nmap <Leader>? :!open dict://<cword><CR><CR>
 
 	" Use Marked for real-time Markdown preview
+	"
 	if executable('/Applications/Marked 2.app/Contents/MacOS/Marked 2')
-		autocmd MyAutoCmd FileType markdown
+		autocmd user_events FileType markdown
 			\ nmap <buffer><Leader>P :silent !open -a Marked\ 2.app '%:p'<CR>
 	endif
-
-	" Use Dash on Mac, for context help
-	if executable('/Applications/Dash.app/Contents/MacOS/Dash')
-		autocmd MyAutoCmd FileType yaml.ansible,php,css,less,html,markdown
-			\ nmap <silent><buffer> K :!open -g dash://"<C-R>=split(&ft, '\.')[0]<CR>:<cword>"&<CR><CR>
-		autocmd MyAutoCmd FileType javascript,javascript.jsx,sql,ruby,conf,sh
-			\ nmap <silent><buffer> K :!open -g dash://"<cword>"&<CR><CR>
-	endif
-
-" Use Zeal on Linux for context help
-elseif executable('zeal')
-	autocmd MyAutoCmd FileType yaml.ansible,php,css,less,html,markdown
-		\ nmap <silent><buffer> K :!zeal --query "<C-R>=split(&ft, '\.')[0]<CR>:<cword>"&<CR><CR>
-	autocmd MyAutoCmd FileType javascript,javascript.jsx,sql,ruby,conf,sh
-		\ nmap <silent><buffer> K :!zeal --query "<cword>"&<CR><CR>
 endif
 
 " }}}
@@ -388,17 +407,18 @@ function! s:SweepBuffers()
 	endif
 endfunction
 
-" OpenChangedFiles COMMAND
 " Open a split for each dirty file in git
 function! OpenChangedFiles()
-	only " Close all windows, unless they're modified
+	silent only " Close all windows, unless they're modified
 	let status =
 		\ system('git status -s | grep "^ \?\(M\|A\|UU\)" | sed "s/^.\{3\}//"')
 	let filenames = split(status, "\n")
-	exec 'edit ' . filenames[0]
-	for filename in filenames[1:]
-		exec 'sp ' . filename
-	endfor
+	if ! empty(filenames)
+		exec 'edit ' . filenames[0]
+		for filename in filenames[1:]
+			exec 'sp ' . filename
+		endfor
+	endif
 endfunction
 
 augroup numbertoggle
@@ -414,5 +434,22 @@ command! Jq %!jq '.'
 command! OpenInVSCode exe "silent !code --goto '" . expand("%") . ":" . line(".") . ":" . col(".") . "'" | redraw!
 command! VSCode OpenInVSCode
 command! Code OpenInVSCode
+
+" Denite
+autocmd FileType denite call s:denite_my_settings()
+function! s:denite_my_settings() abort
+  nnoremap <silent><buffer><expr> <CR>
+  \ denite#do_map('do_action')
+  nnoremap <silent><buffer><expr> d
+  \ denite#do_map('do_action', 'delete')
+  nnoremap <silent><buffer><expr> p
+  \ denite#do_map('do_action', 'preview')
+  nnoremap <silent><buffer><expr> q
+  \ denite#do_map('quit')
+  nnoremap <silent><buffer><expr> i
+  \ denite#do_map('open_filter_buffer')
+  nnoremap <silent><buffer><expr> <Space>
+  \ denite#do_map('toggle_select').'j'
+endfunction
 
 " vim: set ts=2 sw=2 tw=80 noet :
