@@ -15,8 +15,8 @@ nnoremap ,        <Nop>
 xnoremap ,        <Nop>
 nnoremap ;        <Nop>
 xnoremap ;        <Nop>
-nnoremap m        <Nop>
-xnoremap m        <Nop>
+" nnoremap m        <Nop>
+" xnoremap m        <Nop>
 
 " }}}
 " Ensure cache directory "{{{
