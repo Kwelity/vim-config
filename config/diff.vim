@@ -2,7 +2,7 @@
 set diffopt=vertical,filler,context:3,indent-heuristic,algorithm:patience,internal
 
 " if has('patch-8.1.0360')
-" 	set diffopt+=internal,algorithm:patience
+"	set diffopt+=internal,algorithm:patience
 " endif
 
 " Detect if vim is started as a diff tool (vim -d, vimdiff)
@@ -76,7 +76,7 @@ function s:QuitWindow()
     qall
     return
   endif
-	"
+
     " If we're in merge mode, exit it
     if get(g:, 'mergetool_in_merge_mode', 0)
       call mergetool#stop()
@@ -92,7 +92,7 @@ let g:mergetool_prefer_revision = 'local'
 " (m) - for working tree version of merged file
 " (r) - for 'remote' revision
 " (l) - for 'local' revision
-let g:mergetool_layout = 'bmr'
+let g:mergetool_layout = 'br,m'
 
 function s:on_mergetool_set_layout(split)
 
@@ -111,8 +111,7 @@ let g:MergetoolSetLayoutCallback = function('s:on_mergetool_set_layout')
 nmap <leader>mt <plug>(MergetoolToggle)
 nnoremap <silent> <leader>mb :call mergetool#toggle_layout('mr,b')<CR>
 
-
-nmap <expr> <C-Left> &diff? '<Plug>(MergetoolDiffExchangeLeft)' : '<C-Left>'
-nmap <expr> <C-Right> &diff? '<Plug>(MergetoolDiffExchangeRight)' : '<C-Right>'
-nmap <expr> <C-Down> &diff? '<Plug>(MergetoolDiffExchangeDown)' : '<C-Down>'
-nmap <expr> <C-Up> &diff? '<Plug>(MergetoolDiffExchangeUp)' : '<C-Up>'
+nmap <expr> <M-Left> &diff? '<Plug>(MergetoolDiffExchangeLeft)' : '<M-Left>'
+nmap <expr> <M-Right> &diff? '<Plug>(MergetoolDiffExchangeRight)' : '<M-Right>'
+nmap <expr> <M-Down> &diff? '<Plug>(MergetoolDiffExchangeDown)' : '<M-Down>'
+nmap <expr> <M-Up> &diff? '<Plug>(MergetoolDiffExchangeUp)' : '<M-Up>'
