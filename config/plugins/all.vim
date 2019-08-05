@@ -136,15 +136,6 @@ if dein#tap('vim-indent-guides')
 	nmap <silent><Leader>ti :<C-u>IndentGuidesToggle<CR>
 endif
 
-" if dein#tap('vim-bookmarks')
-" 	nmap ma :<C-u>cgetexpr bm#location_list()<CR>
-"		\ :<C-u>Denite quickfix -no-start-filter<CR>
-"	nmap mn <Plug>BookmarkNext
-"	nmap mp <Plug>BookmarkPrev
-"	nmap mm <Plug>BookmarkToggle
-"	nmap mi <Plug>BookmarkAnnotate
-" endif
-
 if dein#tap('auto-git-diff')
 	autocmd user_events FileType gitrebase
 		\  nmap <buffer><CR>  <Plug>(auto_git_diff_scroll_manual_update)
@@ -333,16 +324,6 @@ if dein#tap('caw.vim')
 	autocmd user_events FileType * call InitCaw()
 	call InitCaw()
 endif
-
-function! s:incsearch_config(...) abort
-	return incsearch#util#deepextend(deepcopy({
-	\   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
-	\   'keymap': {
-	\     "\<CR>": '<Over>(easymotion)'
-	\   },
-	\   'is_expr': 0
-	\ }), get(a:, 1, {}))
-endfunction
 
 if dein#tap('vim-textobj-multiblock')
 	omap <silent> ab <Plug>(textobj-multiblock-a)
