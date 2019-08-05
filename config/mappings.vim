@@ -85,7 +85,7 @@ noremap <expr> <C-y> (line("w0") <= 1         ? "k" : "3\<C-y>")
 
 " Window control
 nnoremap <C-q> <C-w>
-nnoremap <C-x> <C-w>x<C-w>w
+" nnoremap <C-x> <C-w>x<C-w>w
 nnoremap <silent><C-w>z :vert resize<CR>:resize<CR>:normal! ze<CR>
 
 " Select blocks after indenting
@@ -217,7 +217,7 @@ function! SetWinAdjust()
 nnoremap _ "_
 
 " remap decrease number to A-a
-nnoremap <A-a> <C-x>
+" nnoremap <A-a> <C-x>
 
 " Add new lines
 nnoremap <silent><A-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
