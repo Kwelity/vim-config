@@ -61,6 +61,7 @@ cnoreabbrev qw wq
 cnoreabbrev Wq wq
 cnoreabbrev WQ wq
 cnoreabbrev Qa qa
+cnoreabbrev Q q
 cnoreabbrev Bd bd
 cnoreabbrev bD bd
 
@@ -80,12 +81,12 @@ noremap <expr> <C-f> max([winheight(0) - 2, 1])
 	\ ."\<C-d>".(line('w$') >= line('$') ? "L" : "M")
 noremap <expr> <C-b> max([winheight(0) - 2, 1])
 	\ ."\<C-u>".(line('w0') <= 1 ? "H" : "M")
-noremap <expr> <C-e> (line("w$") >= line('$') ? "j" : "3\<C-e>")
-noremap <expr> <C-y> (line("w0") <= 1         ? "k" : "3\<C-y>")
+noremap <expr> <C-e> (line("w$") >= line('$') ? "j" : "5\<C-e>")
+noremap <expr> <C-y> (line("w0") <= 1         ? "k" : "5\<C-y>")
 
 " Window control
 nnoremap <C-q> <C-w>
-nnoremap <C-x> <C-w>x<C-w>w
+" nnoremap <C-x> <C-w>x<C-w>w
 nnoremap <silent><C-w>z :vert resize<CR>:resize<CR>:normal! ze<CR>
 
 " Select blocks after indenting
@@ -102,17 +103,22 @@ nmap <<  <<_
 nnoremap <expr> gp '`['.strpart(getregtype(), 0, 1).'`]'
 
 " Navigation in command line
-cnoremap <C-h> <Home>
+" cnoremap <C-h> <Home>
 cnoremap <C-l> <End>
 cnoremap <C-f> <Right>
 cnoremap <C-b> <Left>
 cnoremap <C-d> <C-w>
+
 
 " Switch history search pairs, matching my bash shell
 cnoremap <C-p>  <Up>
 cnoremap <C-n>  <Down>
 cnoremap <Up>   <C-p>
 cnoremap <Down> <C-n>
+
+" Fuzzy search
+map z/ <Plug>(incsearch-fuzzy-/)
+noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
 
 " }}}
 " File operations {{{
@@ -213,15 +219,25 @@ function! SetWinAdjust()
 " Totally Custom {{{
 " --------------
 
-" remap _ to blackhole registry
+" remap _ to blackhole register
 nnoremap _ "_
 
+" clear all global registers
+function! s:clear_registers()
+	let regs=split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', '\zs')
+	for r in regs
+		call setreg(r, [])
+	endfor
+endfunction
+
+command! ClearRegisters :call s:clear_registers()
+
 " remap decrease number to A-a
-nnoremap <A-a> <C-x>
+" nnoremap <A-a> <C-x>
 
 " Add new lines
-nnoremap <silent><A-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
-nnoremap <silent><A-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
+" nnoremap <silent><A-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
+" nnoremap <silent><A-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
 
 " Remove spaces at the end of lines
 nnoremap <silent> ,<Space> :<C-u>silent! keeppatterns %substitute/\s\+$//e<CR>
@@ -414,5 +430,22 @@ command! Jq %!jq '.'
 command! OpenInVSCode exe "silent !code --goto '" . expand("%") . ":" . line(".") . ":" . col(".") . "'" | redraw!
 command! VSCode OpenInVSCode
 command! Code OpenInVSCode
+
+" Denite
+autocmd FileType denite call s:denite_my_settings()
+function! s:denite_my_settings() abort
+  nnoremap <silent><buffer><expr> <CR>
+  \ denite#do_map('do_action')
+  nnoremap <silent><buffer><expr> d
+  \ denite#do_map('do_action', 'delete')
+  nnoremap <silent><buffer><expr> p
+  \ denite#do_map('do_action', 'preview')
+  nnoremap <silent><buffer><expr> q
+  \ denite#do_map('quit')
+  nnoremap <silent><buffer><expr> i
+  \ denite#do_map('open_filter_buffer')
+  nnoremap <silent><buffer><expr> <Space>
+  \ denite#do_map('toggle_select').'j'
+endfunction
 
 " vim: set ts=2 sw=2 tw=80 noet :
