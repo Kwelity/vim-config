@@ -213,6 +213,18 @@ function! SetWinAdjust()
    endif
  endfunction
 
+let t:is_transparent = 1
+function! Toggle_transparent()
+    if t:is_transparent == 0
+        hi Normal guibg=NONE ctermbg=NONE
+        let t:is_transparent = 1
+    else
+        hi Normal guibg=#191a1c ctermbg=NONE
+        let t:is_tranparent = 0
+    endif
+endfunction
+nnoremap <C-t> : call Toggle_transparent()<CR>
+
 " }}}
 " Totally Custom {{{
 " --------------
