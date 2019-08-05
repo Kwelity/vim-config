@@ -519,9 +519,11 @@
   hook_add: let g:tmuxcomplete#trigger = ''
 
 - repo: autozimu/LanguageClient-neovim
+  on_ft: rust
   rev: next
   build: bash install.sh
-  hook_source: source $VIMPATH/config/plugins/languageclientneovim.vim
+  hook_source: source $VIM_PATH/config/plugins/languageclientneovim.vim
+  # hook_source: source $VIM_PATH/config/plugins/deoplete.vim
 
 - repo: tbodt/deoplete-tabnine
   build: bash install.sh
