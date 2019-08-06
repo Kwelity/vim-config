@@ -278,6 +278,7 @@
 - { repo: sharat87/roast.vim }
 - { repo: baverman/vial }
 - { repo: baverman/vial-http }
+- { repo: junegunn/vim-peekaboo }
 
 - repo: samoshkin/vim-mergetool
 
