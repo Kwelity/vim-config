@@ -250,7 +250,12 @@ if dein#tap('open-browser.vim')
 endif
 
 if dein#tap('undotree')
-	nnoremap <Leader>u :UndotreeToggle<CR>
+	function! UndotreeToggleAndFocus()
+		call undotree#UndotreeToggle()
+		call undotree#UndotreeFocus()
+	endfunction
+	" nnoremap <Leader>u :call UndotreeToggleAndFocus()<CR>
+	nnoremap <Leader>u :call UndotreeToggleAndFocus()<CR>
 endif
 
 if dein#tap('vim-online-thesaurus')
