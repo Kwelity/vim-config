@@ -6,7 +6,6 @@
 # -------
 - repo: Shougo/dein.vim
 - repo: rafi/awesome-vim-colorschemes
-- repo: rafi/vim-badge
 - repo: christoomey/vim-tmux-navigator
 - repo: itchyny/vim-gitbranch
 - repo: itchyny/vim-parenmatch
@@ -20,8 +19,8 @@
 - { repo: equalsraf/neovim-gui-shim, if: has('gui_running') }
 
 # Vim8 only:
-# - { repo: roxma/nvim-yarp, if: ! has('nvim') }
-# - { repo: roxma/vim-hug-neovim-rpc, if: ! has('nvim'), depends: nvim-yarp }
+- { repo: roxma/nvim-yarp, if: ! has('nvim') }
+- { repo: roxma/vim-hug-neovim-rpc, if: ! has('nvim'), depends: nvim-yarp }
 
 # Lazy Loading
 # ==========================================
@@ -102,7 +101,7 @@
 #- { repo: gavocanov/vim-js-indent, on_ft: [ javascript, jsx ]}
 #- repo: mxw/vim-jsx
 #  on_ft: [ javascript, jsx ]
-#  hook_source: let g:jsx_ext_required = 0
+#  hook_add: let g:jsx_ext_required = 0
 
 # Golang related
 # - repo: fatih/vim-go
@@ -171,7 +170,7 @@
 - repo: hashivim/vim-terraform
   on_ft: terraform
   on_cmd: [ Terraform, TerraformFmt ]
-  hook_source: let g:terraform_fmt_on_save = 1
+  hook_add: let g:terraform_fmt_on_save = 1
 
 # ==========================================
 # Commands
@@ -220,7 +219,7 @@
 
 - repo: mzlogin/vim-markdown-toc
   on_cmd: [ GenTocGFM, GenTocRedcarpet, GenTocGitLab, UpdateToc ]
-  hook_source: let g:vmt_auto_update_on_save = 0
+  hook_add: let g:vmt_auto_update_on_save = 0
 
 - repo: haya14busa/incsearch.vim
 
@@ -228,25 +227,17 @@
 
 - repo: chemzqm/vim-easygit
   on_cmd: [Gadd, Gcd, Glcd, Gcommit, Gblame, Gdiff, GdiffThis, Gstatus]
-  hook_source: let g:easygit_enable_command = 1
-
-# - repo: majutsushi/tagbar
-#   on_cmd: TagbarToggle
-#   hook_source: |
-#     let g:tagbar_width = 40
-#     if executable('jsctags')
-#       let g:tagbar_type_javascript = { 'ctagsbin': 'jsctags' }
-#     endif
+  hook_add: let g:easygit_enable_command = 1
 
 - repo: liuchengxu/vista.vim
   on_cmd: Vista
-  hook_source: |
+  hook_add: |
     let g:vista#renderer#enable_icon = 1
     let g:vista_echo_cursor_strategy = 'scroll'
 
 - repo: beloglazov/vim-online-thesaurus  # FIXME
   on_cmd: [ OnlineThesaurusCurrentWord, Thesaurus ]
-  hook_source: let g:online_thesaurus_map_keys = 0
+  hook_add: let g:online_thesaurus_map_keys = 0
 
 - repo: diepm/vim-rest-console
   hook_add: |
@@ -307,9 +298,8 @@
 
 - repo: airblade/vim-gitgutter
   on_path: .*
-  hook_source: |
+  hook_add: |
     let g:gitgutter_map_keys = 0
-    let g:gitgutter_sh = $SHELL
     let g:gitgutter_sign_added = '▎'
     let g:gitgutter_sign_modified = '▎'
     let g:gitgutter_sign_removed = '▏'
@@ -443,7 +433,7 @@
   hook_post_source: call echodoc#enable()
 
 - repo: ncm2/float-preview.nvim
-  if: has('nvim')
+  if: has('nvim') && exists('#CompleteChanged')
   on_event: InsertEnter
   hook_add: |
     let g:float_preview#docked = 0
@@ -496,10 +486,13 @@
   hook_add: |
     let g:gutentags_cache_dir = g:etc#cache_path . '/tags'
     let g:gutentags_generate_on_write = 1
-    let g:gutentags_generate_on_missing = 0
+    let g:gutentags_generate_on_missing = 1
     let g:gutentags_generate_on_new = 0
+    let g:gutentags_exclude_project_root = [ '/usr/local' ]
+    let g:gutentags_exclude_filetypes = [ 'defx', 'denite', 'vista' ]
     let g:gutentags_ctags_exclude_wildignore = 1
     let g:gutentags_ctags_exclude = [
+      \ '.idea', '.cache', '.tox', '.bundle', 'build', 'dist',
       \ '*/wp-admin', '*/wp-content', '*/wp-includes',
       \ '*/application/vendor', '*/vendor/ckeditor', '*/media/vendor'
       \ ]
@@ -542,8 +535,8 @@
 
 - repo: raghur/fruzzy
   on_source: denite.nvim
-  hook_source: let g:fruzzy#sortonempty = 0
   hook_post_update: call fruzzy#install()
+  hook_source: let g:fruzzy#sortonempty = 0
 
 # - { repo: rafi/vim-denite-task, on_source: denite.nvim }
 
@@ -555,7 +548,7 @@
 # ==========================================
 # Operators
 # ---------
-- { repo: kana/vim-operator-user, on_func: operator#user#define }
+- repo: kana/vim-operator-user  # only autoload functions, lazy by nature
 
 - repo: kana/vim-operator-replace
   depends: vim-operator-user
@@ -572,9 +565,9 @@
 # ==========================================
 # Text objects
 # ------------
-- { repo: kana/vim-textobj-user, on_func: textobj#user#plugin }
+- repo: kana/vim-textobj-user  # only autoload functions, lazy by nature
 - { repo: terryma/vim-expand-region, on_map: { x: <Plug> }}
-# - { repo: AndrewRadev/sideways.vim, on_map: { ox: <Plug>Sideways }}
+- { repo: AndrewRadev/sideways.vim, on_map: { onx: <Plug>Sideways }}
 - { repo: AndrewRadev/splitjoin.vim, on_map: { n: <Plug>Splitjoin }}
 - { repo: AndrewRadev/linediff.vim, on_cmd: Linediff }
 

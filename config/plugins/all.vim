@@ -55,18 +55,10 @@ if dein#tap('defx.nvim')
 		\ :<C-u>Defx -resume -buffer-name=tab`tabpagenr()` -search=`expand('%:p')`<CR>
 endif
 
-" if dein#tap('tagbar')
-" 	" Also use h/l to open/close folds
-" 	let g:tagbar_map_closefold = ['h', '-', 'zc']
-" 	let g:tagbar_map_openfold = ['l', '+', 'zo']
-" 	let g:tagbar_type_ansible = {
-"		\ 'ctagstype' : 'ansible',
-"		\ 'kinds' : [
-"			\ 't:tasks'
-"		\ ],
-"		\ 'sort' : 0
-"	\ }
-" endif
+if dein#tap('vim-denite-z')
+	command! -nargs=+ -complete=file Z
+		\ call denite#start([{'name': 'z', 'args': [<q-args>], {'immediately': 1}}])
+endif
 
 if dein#tap('vista.vim')
 	let g:vista_executive_for = {
@@ -76,9 +68,8 @@ if dein#tap('vista.vim')
 endif
 
 if dein#tap('neosnippet.vim')
-	" imap <expr><C-o> neosnippet#expandable_or_jumpable()
-	"	\ ? "\<Plug>(neosnippet_expand_or_jump)" : "\<ESC>o"
-	xmap <silent><C-s> <Plug>(neosnippet_register_oneshot_snippet)
+	imap <expr><C-o> neosnippet#expandable_or_jumpable()
+		\ ? "\<Plug>(neosnippet_expand_or_jump)" : "\<ESC>o"
 	smap <silent>L     <Plug>(neosnippet_jump_or_expand)
 	xmap <silent>L     <Plug>(neosnippet_expand_target)
 endif
@@ -280,8 +271,10 @@ if dein#tap('vim-expand-region')
 endif
 
 if dein#tap('sideways.vim')
-	nnoremap <silent> m" :SidewaysJumpLeft<CR>
-	nnoremap <silent> m' :SidewaysJumpRight<CR>
+	nnoremap <silent> >, :SidewaysLeft<CR>
+	nnoremap <silent> <, :SidewaysRight<CR>
+	nnoremap <silent> [, :SidewaysJumpLeft<CR>
+	nnoremap <silent> ], :SidewaysJumpRight<CR>
 	omap <silent> a, <Plug>SidewaysArgumentTextobjA
 	xmap <silent> a, <Plug>SidewaysArgumentTextobjA
 	omap <silent> i, <Plug>SidewaysArgumentTextobjI

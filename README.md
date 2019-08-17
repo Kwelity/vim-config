@@ -54,15 +54,18 @@ ln -s ~/.config/nvim ~/.vim
 
 - _Note:_ If your system sets `$XDG_CONFIG_HOME`,
   use that instead of `~/.config` in the code above.
-  Nvim follows the XDG base-directories convention.
+  Neovim follows the XDG base-directories convention.
 
-**_2._** If you are a _first-time Neovim user_, you need the `pynvim`
+**_2._** If you are a _first-time **Neovim** user_, you need the `pynvim`
 package. Don't worry, run the script provided:
 
 ```sh
 cd ~/.config/nvim
 ./venv.sh
 ```
+
+Otherwise, or additionally, if you use Vim, you can run
+`pip3 install --user pynvim`
 
 **_3._** Run `make test` to test your nvim/vim version and compatibility.
 
@@ -115,21 +118,20 @@ If you'd like to install plugins by yourself, create a
 
 - [config/](./config) - Configuration
   - [plugins/](./config/plugins) - Plugin configurations
-  - [plugins.yaml](./config/plugins.yaml) - _**Plugins!**_
-  - local.plugins.yaml - Custom user plugins
-  - [vimrc](./config/vimrc) - Initialization
-  - [init.vim](./config/init.vim) - `runtimepath` initialization
-  - [general.vim](./config/general.vim) - General configuration
-  - local.vim - Custom user settings
-  - [neovim.vim](./config/neovim.vim) - Neovim specific setup
-  - [mappings.vim](./config/mappings.vim) - Key-mappings
-  - [theme.vim](./config/theme.vim) - Color-scheme and theme setup
+    - [all.vim](./config/plugins/all.vim) - Plugin mappings
+    - […](./config/plugins)
   - [filetype.vim](./config/filetype.vim) - Language behavior
+  - [general.vim](./config/general.vim) - General configuration
+  - local.plugins.yaml - Custom user plugins
+  - local.vim - Custom user settings
+  - [mappings.vim](./config/mappings.vim) - Key-mappings
+  - [plugins.yaml](./config/plugins.yaml) - _**Plugins!**_
   - [terminal.vim](./config/terminal.vim) - Terminal configuration
+  - [vimrc](./config/vimrc) - Initialization
 - [ftplugin/](./ftplugin) - Language specific custom settings
 - [plugin/](./plugin) - Customized small plugins
 - [snippets/](./snippets) - Personal code snippets
-- [themes/](./themes) - Themes! Combination of styles and color-scheme
+- [themes/](./themes) - Colorscheme overrides
 - [filetype.vim](./filetype.vim) - Custom filetype detection
 
 ## Plugin Highlights
@@ -152,7 +154,6 @@ Name           | Description
 -------------- | ----------------------
 [Shougo/dein.vim] | Dark powered Vim/Neovim plugin manager
 [rafi/awesome-colorschemes] | Awesome color-schemes
-[rafi/vim-badge] | Bite-size badges for the tab & status lines
 [thinca/vim-localrc] | Enable configuration file of each directory
 [christoomey/tmux-navigator] | Seamless navigation between tmux panes and vim splits
 [romainl/vim-cool] | Simple plugin that makes hlsearch more useful
@@ -202,8 +203,8 @@ Name           | Description
 [vim-jp/syntax-vim-ex] | Improved Vim syntax highlighting
 [chrisbra/csv.vim] | Handling column separated data
 [tpope/vim-git] | Git runtime files
-[ekalinin/Dockerfile.vim] | syntax and snippets for Dockerfile
-[tmux-plugins/vim-tmux] | vim plugin for tmux.conf
+[ekalinin/Dockerfile.vim] | Syntax and snippets for Dockerfile
+[tmux-plugins/vim-tmux] | Plugin for tmux.conf
 [MTDL9/vim-log-highlighting] | Syntax highlighting for generic log files
 [hashivim/vim-terraform] | Base Terraform integration
 [cespare/vim-toml] | Syntax for TOML
@@ -243,7 +244,6 @@ Name           | Description
 [Shougo/vinarise.vim] | Hex editor
 [mzlogin/vim-markdown-toc] | Generate table of contents for Markdown files
 [chemzqm/vim-easygit] | Git wrapper focus on simplity and usability
-[majutsushi/tagbar] | Displays tags in a window, ordered by scope
 [liuchengxu/vista.vim] | Viewer & Finder for LSP symbols and tags in Vim
 [beloglazov/vim-online-thesaurus] | Look up words in an online thesaurus
 [diepm/vim-rest-console] | Send query to rest api
@@ -336,7 +336,6 @@ Name           | Description
 
 [Shougo/dein.vim]: https://github.com/Shougo/dein.vim
 [rafi/awesome-colorschemes]: https://github.com/rafi/awesome-vim-colorschemes
-[rafi/vim-badge]: https://github.com/rafi/vim-badge
 [thinca/vim-localrc]: https://github.com/thinca/vim-localrc
 [christoomey/tmux-navigator]: https://github.com/christoomey/vim-tmux-navigator
 [romainl/vim-cool]: https://github.com/romainl/vim-cool
@@ -417,7 +416,6 @@ Name           | Description
 [Shougo/vinarise.vim]: https://github.com/Shougo/vinarise.vim
 [mzlogin/vim-markdown-toc]: https://github.com/mzlogin/vim-markdown-toc
 [chemzqm/vim-easygit]: https://github.com/chemzqm/vim-easygit
-[majutsushi/tagbar]: https://github.com/majutsushi/tagbar
 [liuchengxu/vista.vim]: https://github.com/liuchengxu/vista.vim
 [beloglazov/vim-online-thesaurus]: https://github.com/beloglazov/vim-online-thesaurus
 
@@ -496,11 +494,11 @@ Key   | Mode | Action
 Arrows | Normal | Resize splits (* Enable `g:elite_mode` in `.vault.vim`)
 `;`+`c` | Normal | Open context-menu
 `Backspace` | Normal | Match bracket (%)
-`gK` | Normal | Open Zeal or Dash on some file types
+`gK` | Normal | Open Zeal or Dash on some file-types
 `Y` | Normal | Yank to the end of line (y$)
 `<Return>` | Normal | Toggle fold (za)
 `S`+`<Return>` | Normal | Focus the current fold by closing all others (zMza)
-`S`+`<Return>` | Insert | Start new line from any cursor position (\<C-o>o)
+`S`+`<Return>` | Insert | Start new line from any cursor position (<C-o>o)
 `hjkl` | Normal | Smart cursor movements (g/hjkl)
 `Ctrl`+`f` | Normal | Smart page forward (C-f/C-d)
 `Ctrl`+`b` | Normal | Smart page backwards (C-b/C-u)
@@ -509,18 +507,15 @@ Arrows | Normal | Resize splits (* Enable `g:elite_mode` in `.vault.vim`)
 `Ctrl`+`q` | Normal | Remap to `Ctrl`+`w`
 `Ctrl`+`x` | Normal | Rotate window placement
 `!` | Normal | Shortcut for `:!`
-`}` | Normal | After paragraph motion go to first non-blank char (}^)
-`<` | Visual/Normal | Indent to left and re-select
-`>` | Visual/Normal | Indent to right and re-select
+`<` | Visual | Indent to left and re-select
+`>` | Visual | Indent to right and re-select
 `Tab` | Visual | Indent to right and re-select
 `Shift`+`Tab` | Visual | Indent to left and re-select
-`>`+`>` | Normal | Indent to right and re-select
-`<`+`<` | Normal | Indent to left and re-select
-`gh` | Normal | Show highlight group that matches current cursor
+`gh` | Normal | Show highlight groups for word
 `gp` | Normal | Select last paste
 `Q` | Normal | Start/stop macro recording
 `gQ` | Normal | Play macro 'q'
-`mj`/`mk` | Normal/Visual | Move lines down/up
+`<Leader>`+`j`/`k` | Normal/Visual | Move lines down/up
 `<leader>`+`cp` | Normal | Duplicate paragraph
 `<leader>`+`cn`/`cN` | Normal/Visual | Change current word in a repeatable manner
 `sg` | Visual | Replace within selected area
@@ -528,10 +523,10 @@ Arrows | Normal | Resize splits (* Enable `g:elite_mode` in `.vault.vim`)
 `Ctrl`+`b` | Command | Move cursor backward in command line
 `Ctrl`+`f` | Command | Move cursor forward in command line
 `Ctrl`+`r` | Visual | Replace selection with step-by-step confirmation
-`,`+`Space` | Normal | Remove all spaces at EOL
+`<leader>`+`cw` | Normal | Remove all spaces at EOL
 `<leader>`+`<leader>` | Normal | Enter visual line-mode
-`<leader>`+`os` | Normal | Load last session
-`<leader>`+`se` | Normal | Save current workspace as last session
+`<leader>`+`os` | Normal | Load workspace session
+`<leader>`+`se` | Normal | Save current workspace session
 `<leader>`+`d` | Normal/Visual | Duplicate line or selection
 `<leader>`+`S` | Normal/Visual | Source selection
 `<leader>`+`ml` | Normal | Append modeline
@@ -544,11 +539,10 @@ Arrows | Normal | Resize splits (* Enable `g:elite_mode` in `.vault.vim`)
 Key   | Mode | Action
 ----- |:----:| ------------------
 `<leader>`+`cd` | Normal | Switch to the directory of opened buffer (:lcd %:p:h)
-`<leader>`+`w` | Normal/visual | Write (:w)
-`<leader>`+`ww` | Normal/visual | Force Write (:w!)
+`<leader>`+`w` | Normal/Visual | Write (:w)
+`<leader>`+`ww` | Normal/Visual | Force Write (:w!)
 `<leader>`+`y` / `<leader>`+`Y` | Normal | Copy (relative / absolute) file-path to clipboard
 `Ctrl`+`s` | _All_ | Write (:w)
-`W!!` | Command | Write as root
 
 ### Editor UI
 
@@ -565,15 +559,15 @@ Key   | Mode | Action
 `gr` | Normal | Go to previous tab (:tabprevious)
 `gt` | Normal | Go to next tab (:tabnext)
 `g5` | Normal | Go to previous tab (:tabprevious)
-`Ctrl`+`j` | Normal | Move to split below (\<C-w>j)
-`Ctrl`+`k` | Normal | Move to upper split (\<C-w>k)
-`Ctrl`+`h` | Normal | Move to left split (\<C-w>h)
-`Ctrl`+`l` | Normal | Move to right split (\<C-w>l)
+`Ctrl`+`j` | Normal | Move to split below
+`Ctrl`+`k` | Normal | Move to upper split
+`Ctrl`+`h` | Normal | Move to left split
+`Ctrl`+`l` | Normal | Move to right split
 `*` | Visual | Search selection forwards
 `#` | Visual | Search selection backwards
 `]`+`c`/`q` | Normal | Next on location/quickfix list
 `]`+`c`/`q` | Normal | Previous on location/quickfix list
-`<leader>`+`b` | Normal | Toggle colorscheme background dark/light
+`s`+`h` | Normal | Toggle colorscheme background dark/light
 `s`+`-` | Normal | Lower colorscheme contrast (Support solarized8)
 `s`+`=` | Normal | Raise colorscheme contrast (Support solarized8)
 
@@ -584,14 +578,13 @@ Key   | Mode | Action
 `q` | Normal | Quit window (and Vim, if last window)
 `Ctrl`+`Tab` | Normal | Next tab
 `Ctrl`+`Shift`+`Tab` | Normal | Previous tab
-`\`+`\` | Normal | Jump to last tab
 `s`+`v` | Normal | Horizontal split (:split)
 `s`+`g` | Normal | Vertical split (:vsplit)
 `s`+`t` | Normal | Open new tab (:tabnew)
 `s`+`o` | Normal | Close other windows (:only)
+`s`+`b` | Normal | Previous buffer (:b#)
+`s`+`c` | Normal | Closes current buffer (:close)
 `s`+`x` | Normal | Remove buffer, leave blank window
-`s`+`q` | Normal | Closes current buffer (:close)
-`s`+`Q` | Normal | Removes current buffer (:bdelete)
 `<leader>`+`sv` | Normal | Split with previous buffer
 `<leader>`+`sg` | Normal | Vertical split with previous buffer
 `<leader>`+`z` | Normal | Zoom current pane
@@ -628,24 +621,29 @@ Key   | Mode | Action
 `<leader>`+`gt` | Normal | Find tags matching word under cursor
 `<leader>`+`gf` | Normal | Find file matching word under cursor
 `<leader>`+`gg` | Normal/Visual | Grep word under cursor
-| **Within _Denite_ mode** |||
-`Escape` | Normal/Insert | Toggle modes
-`jj` | Insert | Leave Insert mode
-`Ctrl`+`y` | Insert | Redraw
-`r` | Normal | Redraw
+| **Within _Denite_ window** ||
+`jj` / `kk` | Insert | Leave Insert mode
+`q` / `Escape` | Normal | Exit denite window
+`Space` | Normal | Select entry
+`Tab` | Normal | List and choose action
+`i` | Normal | Open filter input
+`dd` | Normal | Delete entry
+`p` | Normal | Preview entry
 `st` | Normal | Open in a new tab
 `sg` | Normal | Open in a vertical split
 `sv` | Normal | Open in a split
-`'` | Normal | Toggle mark current candidate
+`r` | Normal | Redraw
+`yy` | Normal | Yank
+`'` | Normal | Quick move
 
 ### Plugin: Defx
 
 Key   | Mode | Action
 ----- |:----:| ------------------
-`;`+`e` | Normal | Toggle file explorer
-`;`+`a` | Normal | Toggle file explorer on current file
-| **Within _Defx_ buffers** |||
-`h/j/k/l` | Normal | Movement + collapse/expand + file open
+`;`+`e` | Normal | Open file explorer (toggle)
+`;`+`a` | Normal | Open file explorer and select current file
+| **Within _Defx_ window** ||
+`h/j/k/l` | Normal | Movement, collapse/expand, open
 `]`+`g` | Normal | Next dirty git item
 `]`+`g` | Normal | Previous dirty git item
 `w` | Normal | Toggle window size
@@ -659,14 +657,14 @@ Key   | Mode | Action
 `gd` | Normal | Open git diff on selected file
 `gl` | Normal | Open terminal file explorer
 `gr` | Normal | Grep in selected directory
-`gf` | Normal | Search in selected directory for files
+`gf` | Normal | Find files in selected directory
 
-### Plugin: Deoplete / Emmet
+### Plugin: Deoplete and Emmet
 
 Key   | Mode | Action
 ----- |:----:| ------------------
+`Tab` | Insert/select | Smart completion
 `Enter` | Insert | Select completion or expand snippet
-`Tab` | Insert/select | Smart tab movement or completion
 `Ctrl`+`j/k/f/b/d/u` | Insert | Movement in completion pop-up
 `Ctrl`+`<Return>` | Insert | Expand Emmet sequence
 `Ctrl`+`o` | Insert | Expand snippet
@@ -690,26 +688,6 @@ Key   | Mode | Action
 ----- |:----:| ------------------
 `g`+`j` | Normal/Visual | Jump to edge downwards
 `g`+`k` | Normal/Visual | Jump to edge upwards
-
-### Plugin: QuickHL
-
-Key   | Mode | Action
------ |:----:| ------------------
-`m`+`t` | Normal/Visual | Toggle highlighted word
-
-### Plugin: Expand-Region
-
-Key   | Mode | Action
------ |:----:| ------------------
-`v` | Visual/select | Expand selection
-`V` | Visual/select | Reduce selection
-
-### Plugin: ChooseWin
-
-Key   | Mode | Action
------ |:----:| ------------------
-`-` | Normal | Choose a window to edit
-`<leader>`+`-` | Normal | Switch editing window with selected
 
 ### Plugin: Bookmarks
 
@@ -738,7 +716,7 @@ Key   | Mode | Action
 
 Key   | Mode | Action
 ----- |:----:| ------------------
-`]`+`g` | Normal | Jump to next hunk
+`[`+`g` | Normal | Jump to next hunk
 `]`+`g` | Normal | Jump to previous hunk
 `g`+`S` | Normal | Stage hunk
 `<leader>`+`gr` | Normal | Revert hunk
@@ -751,18 +729,22 @@ Key   | Mode | Action
 `m`+`d`+`f` | Visual | Mark lines and open diff if 2nd region
 `m`+`d`+`a` | Visual | Mark lines for diff
 `m`+`d`+`s` | Normal | Shows the diff between all the marked areas
-`m`+`d`+`r` | Normal | Removes the signs denoting the diff'ed regions
+`m`+`d`+`r` | Normal | Removes the signs denoting the diff regions
 
 ### Misc Plugins
 
 Key   | Mode | Action
 ----- |:----:| ------------------
+`v` / `V` | Visual/select | Expand/reduce selection (expand-region)
 `m`+`g` | Normal | Open Magit
+`m`+`t` | Normal/Visual | Toggle highlighted word (quickhl)
+`-` | Normal | Choose a window to edit (choosewin)
+`<leader>`+`-` | Normal | Switch editing window with selected (choosewin)
 `<leader>`+`l` | Normal | Open sidemenu
-`<leader>`+`o` | Normal | Open tag-bar
-`<leader>`+`G` | Normal | Toggle distraction-free writing
-`<leader>`+`gu` | Normal | Open undo tree
-`<leader>`+`W` | Normal | Wiki
+`<leader>`+`o` | Normal | Open tag-bar (:Vista)
+`<leader>`+`G` | Normal | Toggle distraction-free writing (goyo)
+`<leader>`+`gu` | Normal | Open undo-tree
+`<leader>`+`W` | Normal | VimWiki
 `<leader>`+`K` | Normal | Thesaurus
 
 ## Credits & Contribution
