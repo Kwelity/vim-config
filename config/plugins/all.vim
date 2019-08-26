@@ -130,6 +130,32 @@ if dein#tap('vim-indent-guides')
 	nmap <silent><Leader>ti :<C-u>IndentGuidesToggle<CR>
 endif
 
+if dein#tap('vim-signature')
+	let g:SignatureMap = {
+		\ 'Leader':            'm',
+		\ 'ListBufferMarks':   'm/',
+		\ 'ListBufferMarkers': 'm?',
+		\ 'PlaceNextMark':     'm,',
+		\ 'ToggleMarkAtLine':  'mm',
+		\ 'PurgeMarksAtLine':  'm-',
+		\ 'DeleteMark':        'dm',
+		\ 'PurgeMarks':        'm<Space>',
+		\ 'PurgeMarkers':      'm<BS>',
+		\ 'GotoNextLineAlpha': "']",
+		\ 'GotoPrevLineAlpha': "'[",
+		\ 'GotoNextSpotAlpha': '`]',
+		\ 'GotoPrevSpotAlpha': '`[',
+		\ 'GotoNextLineByPos': "]'",
+		\ 'GotoPrevLineByPos': "['",
+		\ 'GotoNextSpotByPos': 'mn',
+		\ 'GotoPrevSpotByPos': 'mp',
+		\ 'GotoNextMarker':    ']-',
+		\ 'GotoPrevMarker':    '[-',
+		\ 'GotoNextMarkerAny': 'mj',
+		\ 'GotoPrevMarkerAny': 'mk',
+		\ }
+endif
+
 if dein#tap('auto-git-diff')
 	autocmd user_events FileType gitrebase
 		\  nmap <buffer><CR>  <Plug>(auto_git_diff_scroll_manual_update)
@@ -191,6 +217,7 @@ if dein#tap('vim-gitgutter')
 	nmap ]g <Plug>GitGutterNextHunk
 	nmap [g <Plug>GitGutterPrevHunk
 	nmap gS <Plug>GitGutterStageHunk
+	xmap gS <Plug>GitGutterStageHunk
 	nmap <Leader>gr <Plug>GitGutterUndoHunk
 	nmap gs <Plug>GitGutterPreviewHunk
 endif

@@ -6,6 +6,55 @@ Lean mean Neo/vim machine, 30-45ms startup time.
 
 Best with Neovim or Vim8 with +python3 extensions enabled.
 
+<details>
+  <summary>
+    <strong>Table of Contents</strong>
+    <small><i>(🔎 Click to expand)</i></small>
+  </summary>
+
+<!-- vim-markdown-toc GFM -->
+
+* [Features](#features)
+* [Screenshot](#screenshot)
+* [Pre-requisites](#pre-requisites)
+* [Install](#install)
+  * [Recommended Fonts](#recommended-fonts)
+  * [Recommended Linters](#recommended-linters)
+  * [Recommended Tools](#recommended-tools)
+* [Upgrade](#upgrade)
+* [User Custom Config](#user-custom-config)
+* [Structure](#structure)
+* [Plugin Highlights](#plugin-highlights)
+* [Plugins Included](#plugins-included)
+  * [Non Lazy-Loaded Plugins](#non-lazy-loaded-plugins)
+  * [Lazy-Loaded Plugins](#lazy-loaded-plugins)
+    * [Language](#language)
+    * [Commands](#commands)
+    * [Interface](#interface)
+    * [Completion](#completion)
+    * [Denite](#denite)
+    * [Operators & Text Objects](#operators--text-objects)
+* [Custom Key-mappings](#custom-key-mappings)
+  * [General](#general)
+  * [File Operations](#file-operations)
+  * [Editor UI](#editor-ui)
+  * [Window Management](#window-management)
+  * [Plugin: Denite](#plugin-denite)
+  * [Plugin: Defx](#plugin-defx)
+  * [Plugin: Deoplete and Emmet](#plugin-deoplete-and-emmet)
+  * [Plugin: Caw (comments)](#plugin-caw-comments)
+  * [Plugin: Edge Motion](#plugin-edge-motion)
+  * [Plugin: Signature](#plugin-signature)
+  * [Plugin: Easygit](#plugin-easygit)
+  * [Plugin: GitGutter](#plugin-gitgutter)
+  * [Plugin: Linediff](#plugin-linediff)
+  * [Misc Plugins](#misc-plugins)
+* [Credits & Contribution](#credits--contribution)
+
+</details>
+
+<!-- vim-markdown-toc -->
+
 ## Features
 
 - Fast startup time
@@ -13,13 +62,13 @@ Best with Neovim or Vim8 with +python3 extensions enabled.
 - Lazy-load 95% of plugins with [Shougo/dein.vim]
 - Custom side-menu (try it out! <kbd>Leader</kbd>+<kbd>l</kbd>)
 - Custom context-menu (try it! <kbd>;</kbd>+<kbd>c</kbd>)
-- Modular configuration
-- Denite (Unite's successor) centric work-flow
+- Modular configuration (see [structure](#structure))
+- Denite centric work-flow (lists)
 - Extensive Deoplete setup (auto-completion)
-- Lightweight simple status/tabline
+- Light-weight but informative status/tabline
 - Easy customizable theme
 - Premium color-schemes
-- Central location for tags
+- Central location for tags and sessions
 
 ## Screenshot
 
@@ -28,17 +77,14 @@ Best with Neovim or Vim8 with +python3 extensions enabled.
 ## Pre-requisites
 
 * Python 3 (`brew install python`)
-* Python 2 (`brew install python@2`)
 * Neovim (Optional, `brew install neovim`)
-* virtualenv for both python3 and python2:
-  ```
-  pip2 install virtualenv
+* virtualenv for python3:
+  ```bash
   pip3 install virtualenv
   ```
   On Ubuntu you can use:
-  ```
+  ```bash
   apt-get install -y python3-venv
-  pip install virtualenv
   ```
 
 ## Install
@@ -46,7 +92,7 @@ Best with Neovim or Vim8 with +python3 extensions enabled.
 **_1._** Let's clone this repo! Clone to `~/.config/nvim`,
 we'll also symlink it for Vim:
 
-```sh
+```bash
 mkdir ~/.config
 git clone git://github.com/Kwelity/vim-config.git ~/.config/nvim
 ln -s ~/.config/nvim ~/.vim
@@ -74,6 +120,23 @@ Otherwise, or additionally, if you use Vim, you can run
 **_5._** If you are experiencing problems, try running `nvim -c checkhealth`
 
 Enjoy!
+
+### Recommended Fonts
+
+- [Pragmata Pro] (€19 – €1,990): My preferred font
+- Any of the [Nerd Fonts]
+
+On macOS with Homebrew, choose one of the [Nerd Fonts],
+for example, to install the [Hack](https://sourcefoundry.org/hack/) font:
+
+```bash
+brew tap homebrew/cask-fonts
+brew search nerd-font
+brew cask install font-hack-nerd-font
+```
+
+[Pragmata Pro]: https://www.fsd.it/shop/fonts/pragmatapro/
+[Nerd Fonts]: https://www.nerdfonts.com
 
 ### Recommended Linters
 
@@ -109,10 +172,9 @@ Run `make update`
 ## User Custom Config
 
 If you want to add your own configuration, create the `config/local.vim` file
-and add your personal settings there. This file is ignored by `.gitignore`.
-
-If you'd like to install plugins by yourself, create a
-`config/local.plugins.yaml` file and manage your own plugin collection.
+and add your personal settings there. If you'd like to install plugins by
+yourself, create a `config/local.plugins.yaml` file and manage your own plugin
+collection.
 
 If you want to disable some of the plugins I use, you can overwrite them, e.g.:
 
@@ -148,9 +210,7 @@ If you want to disable some of the plugins I use, you can overwrite them, e.g.:
 - Go completion via vim-go and gocode
 - Javascript completion via Tern
 - Python Jedi completion, PEP8 convention
-- Languages: PHP, Ansible, css3, csv, json, less, markdown, mustache
-- Helpers: Undo tree, bookmarks, git, tmux navigation,
-    hex editor, sessions, and much more.
+- Languages: PHP, Ansible, css3, csv, json, less, markdown, mustache, and more
 
 _Note_ that 95% of the plugins are **[lazy-loaded]**.
 
@@ -432,7 +492,7 @@ Name           | Description
 [rafi/vim-sidemenu]: https://github.com/rafi/vim-sidemenu
 [airblade/vim-gitgutter]: https://github.com/airblade/vim-gitgutter
 [nathanaelkane/vim-indent-guides]: https://github.com/nathanaelkane/vim-indent-guides
-[MattesGroeger/vim-bookmarks]: https://github.com/MattesGroeger/vim-bookmarks
+[kshenoy/vim-signature]: https://github.com/kshenoy/vim-signature
 [hotwatermorning/auto-git-diff]: https://github.com/hotwatermorning/auto-git-diff
 [rhysd/committia.vim]: https://github.com/rhysd/committia.vim
 [benekastah/neomake]: https://github.com/neomake/neomake
@@ -493,265 +553,179 @@ Note that,
 * Local-leader is set as <kbd>;</kbd> and used for navigation and search mostly
   (Denite and Defx)
 
-Key   | Mode | Action
------ |:----:| ------------------
-`Space` | _All_ | **Leader**
-`;` | _All_ | **Local Leader**
-Arrows | Normal | Resize splits (* Enable `g:elite_mode` in `.vault.vim`)
-`;`+`c` | Normal | Open context-menu
-`Backspace` | Normal | Match bracket (%)
-`gK` | Normal | Open Zeal or Dash on some file-types
-`Y` | Normal | Yank to the end of line (y$)
-`<Return>` | Normal | Toggle fold (za)
-`S`+`<Return>` | Normal | Focus the current fold by closing all others (zMza)
-`S`+`<Return>` | Insert | Start new line from any cursor position (<C-o>o)
-`hjkl` | Normal | Smart cursor movements (g/hjkl)
-`Ctrl`+`f` | Normal | Smart page forward (C-f/C-d)
-`Ctrl`+`b` | Normal | Smart page backwards (C-b/C-u)
-`Ctrl`+`e` | Normal | Smart scroll down (3C-e/j)
-`Ctrl`+`y` | Normal | Smart scroll up (3C-y/k)
-`Ctrl`+`q` | Normal | Remap to `Ctrl`+`w`
-`Ctrl`+`x` | Normal | Rotate window placement
-`!` | Normal | Shortcut for `:!`
-`<` | Visual | Indent to left and re-select
-`>` | Visual | Indent to right and re-select
-`Tab` | Visual | Indent to right and re-select
-`Shift`+`Tab` | Visual | Indent to left and re-select
-`gh` | Normal | Show highlight groups for word
-`gp` | Normal | Select last paste
-`Q` | Normal | Start/stop macro recording
-`gQ` | Normal | Play macro 'q'
-`<Leader>`+`j`/`k` | Normal/Visual | Move lines down/up
-`<leader>`+`cp` | Normal | Duplicate paragraph
-`<leader>`+`cn`/`cN` | Normal/Visual | Change current word in a repeatable manner
-`sg` | Visual | Replace within selected area
-`Ctrl`+`a` | Command | Navigation in command line
-`Ctrl`+`b` | Command | Move cursor backward in command line
-`Ctrl`+`f` | Command | Move cursor forward in command line
-`Ctrl`+`r` | Visual | Replace selection with step-by-step confirmation
-`<leader>`+`cw` | Normal | Remove all spaces at EOL
-`<leader>`+`<leader>` | Normal | Enter visual line-mode
-`<leader>`+`os` | Normal | Load workspace session
-`<leader>`+`se` | Normal | Save current workspace session
-`<leader>`+`d` | Normal/Visual | Duplicate line or selection
-`<leader>`+`S` | Normal/Visual | Source selection
-`<leader>`+`ml` | Normal | Append modeline
-`Alt`+`a` | Normal | Decrease number (<C-x>)
-`Alt`+`k` | Normal | Add new line above retaining current position
-`Alt`+`j` | Normal | Add new line below retaining current position
+
 
 ### File Operations
 
-Key   | Mode | Action
------ |:----:| ------------------
-`<leader>`+`cd` | Normal | Switch to the directory of opened buffer (:lcd %:p:h)
-`<leader>`+`w` | Normal/Visual | Write (:w)
-`<leader>`+`ww` | Normal/Visual | Force Write (:w!)
-`<leader>`+`y` / `<leader>`+`Y` | Normal | Copy (relative / absolute) file-path to clipboard
-`Ctrl`+`s` | _All_ | Write (:w)
+
 
 ### Editor UI
 
-Key   | Mode | Action
------ |:----:| ------------------
-`<leader>`+`ti` | Normal | Toggle indentation lines
-`<leader>`+`ts` | Normal | Toggle spell-checker (:setlocal spell!)
-`<leader>`+`tn` | Normal | Toggle line numbers (:setlocal nonumber!)
-`<leader>`+`tl` | Normal | Toggle hidden characters (:setlocal nolist!)
-`<leader>`+`th` | Normal | Toggle highlighted search (:set hlsearch!)
-`<leader>`+`tw` | Normal | Toggle wrap (:setlocal wrap! breakindent!)
-`g0` | Normal | Go to first tab (:tabfirst)
-`g$` | Normal | Go to last tab (:tablast)
-`gr` | Normal | Go to previous tab (:tabprevious)
-`gt` | Normal | Go to next tab (:tabnext)
-`g5` | Normal | Go to previous tab (:tabprevious)
-`Ctrl`+`j` | Normal | Move to split below
-`Ctrl`+`k` | Normal | Move to upper split
-`Ctrl`+`h` | Normal | Move to left split
-`Ctrl`+`l` | Normal | Move to right split
-`*` | Visual | Search selection forwards
-`#` | Visual | Search selection backwards
-`]`+`c`/`q` | Normal | Next on location/quickfix list
-`]`+`c`/`q` | Normal | Previous on location/quickfix list
-`s`+`h` | Normal | Toggle colorscheme background dark/light
-`s`+`-` | Normal | Lower colorscheme contrast (Support solarized8)
-`s`+`=` | Normal | Raise colorscheme contrast (Support solarized8)
+
 
 ### Window Management
 
-Key   | Mode | Action
------ |:----:| ------------------
-`q` | Normal | Quit window (and Vim, if last window)
-`Ctrl`+`Tab` | Normal | Next tab
-`Ctrl`+`Shift`+`Tab` | Normal | Previous tab
-`s`+`v` | Normal | Horizontal split (:split)
-`s`+`g` | Normal | Vertical split (:vsplit)
-`s`+`t` | Normal | Open new tab (:tabnew)
-`s`+`o` | Normal | Close other windows (:only)
-`s`+`b` | Normal | Previous buffer (:b#)
-`s`+`c` | Normal | Closes current buffer (:close)
-`s`+`x` | Normal | Remove buffer, leave blank window
-`<leader>`+`sv` | Normal | Split with previous buffer
-`<leader>`+`sg` | Normal | Vertical split with previous buffer
-`<leader>`+`z` | Normal | Zoom current pane
-`<leader>`+`zz` | Normal | Reset pane level
+
 
 ### Plugin: Denite
 
-Key   | Mode | Action
------ |:----:| ------------------
-`;`+`r` | Normal | Resumes last Denite window
-`;`+`f` | Normal | File search
-`;`+`b` | Normal | Buffers and MRU
-`;`+`d` | Normal | Directories
-`;`+`v` | Normal/Visual | Yank history
-`;`+`l` | Normal | Location list
-`;`+`q` | Normal | Quick fix
-`;`+`n` | Normal | Dein plugin list
-`;`+`g` | Normal | Grep search
-`;`+`j` | Normal | Jump points
-`;`+`u` | Normal | Junk files
-`;`+`o` | Normal | Outline tags
-`;`+`s` | Normal | Sessions
-`;`+`t` | Normal | Tag list
-`;`+`p` | Normal | Jump to previous position
-`;`+`h` | Normal | Help
-`;`+`m` | Normal | Memo list
-`;`+`z` | Normal | Z (jump around)
-`;`+`/` | Normal | Buffer lines
-`;`+`*` | Normal | Match word under cursor with lines
-`;`+`;` | Normal | Command history
-`<leader>`+`gl` | Normal | Git log (all)
-`<leader>`+`gs` | Normal | Git status
-`<leader>`+`gc` | Normal | Git branches
-`<leader>`+`gt` | Normal | Find tags matching word under cursor
-`<leader>`+`gf` | Normal | Find file matching word under cursor
-`<leader>`+`gg` | Normal/Visual | Grep word under cursor
+| Key   | Mode | Action
+| ----- |:----:| ------------------
+| `;`+`r` | Normal | Resumes last Denite window
+| `;`+`f` | Normal | File search
+| `;`+`b` | Normal | Buffers and MRU
+| `;`+`d` | Normal | Directories
+| `;`+`v` | Normal/Visual | Yank history
+| `;`+`l` | Normal | Location list
+| `;`+`q` | Normal | Quick fix
+| `;`+`n` | Normal | Dein plugin list
+| `;`+`g` | Normal | Grep search
+| `;`+`j` | Normal | Jump points
+| `;`+`u` | Normal | Junk files
+| `;`+`o` | Normal | Outline tags
+| `;`+`s` | Normal | Sessions
+| `;`+`t` | Normal | Tag list
+| `;`+`p` | Normal | Jump to previous position
+| `;`+`h` | Normal | Help
+| `;`+`m` | Normal | Memo list
+| `;`+`z` | Normal | Z (jump around)
+| `;`+`/` | Normal | Buffer lines
+| `;`+`*` | Normal | Match word under cursor with lines
+| `;`+`;` | Normal | Command history
+| `<leader>`+`gl` | Normal | Git log (all)
+| `<leader>`+`gs` | Normal | Git status
+| `<leader>`+`gc` | Normal | Git branches
+| `<leader>`+`gt` | Normal | Find tags matching word under cursor
+| `<leader>`+`gf` | Normal | Find file matching word under cursor
+| `<leader>`+`gg` | Normal/Visual | Grep word under cursor
 | **Within _Denite_ window** ||
-`jj` / `kk` | Insert | Leave Insert mode
-`q` / `Escape` | Normal | Exit denite window
-`Space` | Normal | Select entry
-`Tab` | Normal | List and choose action
-`i` | Normal | Open filter input
-`dd` | Normal | Delete entry
-`p` | Normal | Preview entry
-`st` | Normal | Open in a new tab
-`sg` | Normal | Open in a vertical split
-`sv` | Normal | Open in a split
-`r` | Normal | Redraw
-`yy` | Normal | Yank
-`'` | Normal | Quick move
+| `jj` / `kk` | Insert | Leave Insert mode
+| `q` / `Escape` | Normal | Exit denite window
+| `Space` | Normal | Select entry
+| `Tab` | Normal | List and choose action
+| `i` | Normal | Open filter input
+| `dd` | Normal | Delete entry
+| `p` | Normal | Preview entry
+| `st` | Normal | Open in a new tab
+| `sg` | Normal | Open in a vertical split
+| `sv` | Normal | Open in a split
+| `r` | Normal | Redraw
+| `yy` | Normal | Yank
+| `'` | Normal | Quick move
 
 ### Plugin: Defx
 
-Key   | Mode | Action
------ |:----:| ------------------
-`;`+`e` | Normal | Open file explorer (toggle)
-`;`+`a` | Normal | Open file explorer and select current file
+| Key   | Mode | Action
+| ----- |:----:| ------------------
+| `;`+`e` | Normal | Open file explorer (toggle)
+| `;`+`a` | Normal | Open file explorer and select current file
 | **Within _Defx_ window** ||
-`h/j/k/l` | Normal | Movement, collapse/expand, open
-`]`+`g` | Normal | Next dirty git item
-`]`+`g` | Normal | Previous dirty git item
-`w` | Normal | Toggle window size
-`N` | Normal | Create new file or directory
-`yy` | Normal | Yank selected item to clipboard
-`st` | Normal | Open file in new tab
-`sv` | Normal | Open file in a horizontal split
-`sg` | Normal | Open file in a vertical split
-`&` | Normal | Jump to project root
-`gx` | Normal | Execute associated system application
-`gd` | Normal | Open git diff on selected file
-`gl` | Normal | Open terminal file explorer
-`gr` | Normal | Grep in selected directory
-`gf` | Normal | Find files in selected directory
+| `h/j/k/l` | Normal | Movement, collapse/expand, open
+| `]`+`g` | Normal | Next dirty git item
+| `]`+`g` | Normal | Previous dirty git item
+| `w` | Normal | Toggle window size
+| `N` | Normal | Create new file or directory
+| `yy` | Normal | Yank selected item to clipboard
+| `st` | Normal | Open file in new tab
+| `sv` | Normal | Open file in a horizontal split
+| `sg` | Normal | Open file in a vertical split
+| `&` | Normal | Jump to project root
+| `gx` | Normal | Execute associated system application
+| `gd` | Normal | Open git diff on selected file
+| `gl` | Normal | Open terminal file explorer
+| `gr` | Normal | Grep in selected directory
+| `gf` | Normal | Find files in selected directory
 
 ### Plugin: Deoplete and Emmet
 
-Key   | Mode | Action
------ |:----:| ------------------
-`Tab` | Insert/select | Smart completion
-`Enter` | Insert | Select completion or expand snippet
-`Ctrl`+`j/k/f/b/d/u` | Insert | Movement in completion pop-up
-`Ctrl`+`<Return>` | Insert | Expand Emmet sequence
-`Ctrl`+`o` | Insert | Expand snippet
-`Ctrl`+`g` | Insert | Refresh candidates
-`Ctrl`+`l` | Insert | Complete common string
-`Ctrl`+`e` | Insert | Cancel selection and close pop-up
-`Ctrl`+`y` | Insert | Close pop-up
+| Key   | Mode | Action
+| ----- |:----:| ------------------
+| `Tab` | Insert/select | Smart completion
+| `Enter` | Insert | Select completion or expand snippet
+| `Ctrl`+`j/k/f/b/d/u` | Insert | Movement in completion pop-up
+| `Ctrl`+`<Return>` | Insert | Expand Emmet sequence
+| `Ctrl`+`o` | Insert | Expand snippet
+| `Ctrl`+`g` | Insert | Refresh candidates
+| `Ctrl`+`l` | Insert | Complete common string
+| `Ctrl`+`e` | Insert | Cancel selection and close pop-up
+| `Ctrl`+`y` | Insert | Close pop-up
 
 ### Plugin: Caw (comments)
 
-Key   | Mode | Action
------ |:----:| ------------------
-`gc` | Normal/visual | Prefix
-`gcc` | Normal/visual | Toggle comments
-`<leader>`+`v` | Normal/visual | Toggle single-line comments
-`<leader>`+`V` | Normal/visual | Toggle comment block
+| Key   | Mode | Action
+| ----- |:----:| ------------------
+| `gc` | Normal/visual | Prefix
+| `gcc` | Normal/visual | Toggle comments
+| `<leader>`+`v` | Normal/visual | Toggle single-line comments
+| `<leader>`+`V` | Normal/visual | Toggle comment block
 
 ### Plugin: Edge Motion
 
-Key   | Mode | Action
------ |:----:| ------------------
-`g`+`j` | Normal/Visual | Jump to edge downwards
-`g`+`k` | Normal/Visual | Jump to edge upwards
+| Key   | Mode | Action
+| ----- |:----:| ------------------
+| `g`+`j` | Normal/Visual | Jump to edge downwards
+| `g`+`k` | Normal/Visual | Jump to edge upwards
 
-### Plugin: Bookmarks
+### Plugin: Signature
 
-Key   | Mode | Action
------ |:----:| ------------------
-`m`+`a` | Normal | Show list of all bookmarks
-`m`+`m` | Normal | Toggle bookmark in current line
-`m`+`n` | Normal | Jump to next bookmark
-`m`+`p` | Normal | Jump to previous bookmark
-`m`+`i` | Normal | Annotate bookmark
+| Key   | Mode | Action
+| ----- |:----:| ------------------
+| `m`+`/`/`?` | Normal | Show list of buffer marks/markers
+| `m`+`m` | Normal | Toggle mark on current line
+| `m`+`,` | Normal | Place next mark
+| `m`+`-` | Normal | Purge all marks on current line
+| `m`+`n` | Normal | Jump to next mark
+| `m`+`p` | Normal | Jump to previous mark
+| `m`+`j` | Normal | Jump to next marker
+| `m`+`k` | Normal | Jump to previous marker
 
 ### Plugin: Easygit
 
-Key   | Mode | Action
------ |:----:| ------------------
-`<leader>`+`ga` | Normal | Git add current file
-`<leader>`+`gS` | Normal | Git status
-`<leader>`+`gd` | Normal | Git diff
-`<leader>`+`gD` | Normal | Close diff
-`<leader>`+`gc` | Normal | Git commit
-`<leader>`+`gb` | Normal | Git blame
-`<leader>`+`gB` | Normal | Open in browser
-`<leader>`+`gp` | Normal | Git push
+| Key   | Mode | Action
+| ----- |:----:| ------------------
+| `<leader>`+`ga` | Normal | Git add current file
+| `<leader>`+`gS` | Normal | Git status
+| `<leader>`+`gd` | Normal | Git diff
+| `<leader>`+`gD` | Normal | Close diff
+| `<leader>`+`gc` | Normal | Git commit
+| `<leader>`+`gb` | Normal | Git blame
+| `<leader>`+`gB` | Normal | Open in browser
+| `<leader>`+`gp` | Normal | Git push
 
 ### Plugin: GitGutter
 
-Key   | Mode | Action
------ |:----:| ------------------
-`[`+`g` | Normal | Jump to next hunk
-`]`+`g` | Normal | Jump to previous hunk
-`g`+`S` | Normal | Stage hunk
-`<leader>`+`gr` | Normal | Revert hunk
-`g`+`s` | Normal | Preview hunk
+| Key   | Mode | Action
+| ----- |:----:| ------------------
+| `[`+`g` | Normal | Jump to next hunk
+| `]`+`g` | Normal | Jump to previous hunk
+| `g`+`S` | Normal | Stage hunk
+| `<leader>`+`gr` | Normal | Revert hunk
+| `g`+`s` | Normal | Preview hunk
 
 ### Plugin: Linediff
 
-Key   | Mode | Action
------ |:----:| ------------------
-`m`+`d`+`f` | Visual | Mark lines and open diff if 2nd region
-`m`+`d`+`a` | Visual | Mark lines for diff
-`m`+`d`+`s` | Normal | Shows the diff between all the marked areas
-`m`+`d`+`r` | Normal | Removes the signs denoting the diff regions
+| Key   | Mode | Action
+| ----- |:----:| ------------------
+| `m`+`d`+`f` | Visual | Mark lines and open diff if 2nd region
+| `m`+`d`+`a` | Visual | Mark lines for diff
+| `m`+`d`+`s` | Normal | Shows the diff between all the marked areas
+| `m`+`d`+`r` | Normal | Removes the signs denoting the diff regions
 
 ### Misc Plugins
 
-Key   | Mode | Action
------ |:----:| ------------------
-`v` / `V` | Visual/select | Expand/reduce selection (expand-region)
-`m`+`g` | Normal | Open Magit
-`m`+`t` | Normal/Visual | Toggle highlighted word (quickhl)
-`-` | Normal | Choose a window to edit (choosewin)
-`<leader>`+`-` | Normal | Switch editing window with selected (choosewin)
-`<leader>`+`l` | Normal | Open sidemenu
-`<leader>`+`o` | Normal | Open tag-bar (:Vista)
-`<leader>`+`G` | Normal | Toggle distraction-free writing (goyo)
-`<leader>`+`gu` | Normal | Open undo-tree
-`<leader>`+`W` | Normal | VimWiki
-`<leader>`+`K` | Normal | Thesaurus
+| Key   | Mode | Action
+| ----- |:----:| ------------------
+| `v` / `V` | Visual/select | Expand/reduce selection (expand-region)
+| `m`+`g` | Normal | Open Magit
+| `m`+`t` | Normal/Visual | Toggle highlighted word (quickhl)
+| `-` | Normal | Choose a window to edit (choosewin)
+| `<leader>`+`-` | Normal | Switch editing window with selected (choosewin)
+| `<leader>`+`l` | Normal | Open sidemenu
+| `<leader>`+`o` | Normal | Open tag-bar (:Vista)
+| `<leader>`+`G` | Normal | Toggle distraction-free writing (goyo)
+| `<leader>`+`gu` | Normal | Open undo-tree
+| `<leader>`+`W` | Normal | VimWiki
+| `<leader>`+`K` | Normal | Thesaurus
 
 ## Credits & Contribution
 
