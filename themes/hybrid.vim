@@ -16,15 +16,18 @@ highlight Normal guibg=NONE ctermbg=NONE
 " Tabline {{{
 " ---
 " TabLineFill: Tab pages line, where there are no labels
-hi TabLineFill ctermfg=234 ctermbg=236 guifg=#1C1C1C guibg=#303030 cterm=NONE gui=NONE
+highlight TabLineFill ctermfg=234 ctermbg=236 guifg=#3a3b3d guibg=#303030 cterm=NONE gui=NONE
 " TabLine: Not-active tab page label
-hi TabLine     ctermfg=243 ctermbg=236 guifg=#767676 guibg=#303030 cterm=NONE gui=NONE
+highlight TabLine     ctermfg=243 ctermbg=236 guifg=#767676 guibg=#303030 cterm=NONE gui=NONE
 " TabLineSel: Active tab page label
-hi TabLineSel  ctermfg=241 ctermbg=234 guifg=#626262 guibg=#1C1C1C cterm=NONE gui=NONE
+highlight TabLineSel  ctermfg=241 ctermbg=234 guifg=#626262 guibg=#3a3b3d cterm=NONE gui=NONE
 " Custom
-highlight TabLineSelShade  ctermfg=235 ctermbg=234 guifg=#262626 guibg=#1C1C1C
-highlight TabLineAlt       ctermfg=252 ctermbg=238 guifg=#D0D0D0 guibg=#444444
-highlight TabLineAltShade  ctermfg=238 ctermbg=236 guifg=#444444 guibg=#303030
+highlight TabLineSelShade  ctermfg=235 ctermbg=234 guifg=#262626 guibg=#3a3b3d
+highlight TabLineAlt       ctermfg=252 ctermbg=238 guifg=#D0D0D0 guibg=#3a3b3d
+highlight TabLineAltShade  ctermfg=238 ctermbg=236 guifg=#3a3b3d guibg=#303030
+
+highlight ColorColumn ctermfg=241 ctermbg=234 guibg=#3a3b3d ctermbg=None cterm=NONE
+highlight SignColumn ctermfg=241 ctermbg=234 guibg=#3a3b3d ctermbg=None cterm=NONE
 " }}}
 
 " Highlights: Statusline {{{
@@ -34,7 +37,7 @@ highlight StatusLineNC ctermfg=236 ctermbg=242 guifg=#30302c guibg=#666656
 " Filepath color
 highlight User1 guifg=#D7D7BC guibg=#30302c ctermfg=251 ctermbg=236
 " Line and column information
-highlight User2 guifg=#a8a897 guibg=#4e4e43 ctermfg=248 ctermbg=239
+highlight User2 guifg=#a8a897 guibg=#464849 ctermfg=248 ctermbg=239
 " Line and column corner arrow
 highlight User3 guifg=#4e4e43 guibg=#30302c ctermfg=239 ctermbg=236
 " Buffer # symbol and whitespace or syntax errors
@@ -86,10 +89,10 @@ highlight! WarningSyntax ctermfg=58 guifg=#7d7629
 
 " Plugin: vim-gitgutter {{{
 " ---
-highlight! GitGutterAdd ctermfg=22 guifg=#006000 ctermbg=234 guibg=#1c1c1c
-highlight! GitGutterChange ctermfg=58 guifg=#5F6000 ctermbg=234 guibg=#1c1c1c
-highlight! GitGutterDelete ctermfg=52 guifg=#600000 ctermbg=234 guibg=#1c1c1c
-highlight! GitGutterChangeDelete ctermfg=52 guifg=#600000 ctermbg=234 guibg=#1c1c1c
+highlight! GitGutterAdd ctermfg=22 guifg=#006000 ctermbg=234 guibg=#3a3b3d
+highlight! GitGutterChange ctermfg=58 guifg=#5F6000 ctermbg=234 guibg=#3a3b3d
+highlight! GitGutterDelete ctermfg=52 guifg=#600000 ctermbg=234 guibg=#3a3b3d
+highlight! GitGutterChangeDelete ctermfg=52 guifg=#600000 ctermbg=234 guibg=#3a3b3d
 " }}}
 
 " Plugin: denite {{{
@@ -109,8 +112,8 @@ highlight! link Flashy DiffText
 " }}}
 
 " Plugin: vim-signature {{{
-highlight! SignatureMarkText    ctermfg=11 guifg=#756207 ctermbg=234 guibg=#1c1c1c
-highlight! SignatureMarkerText  ctermfg=12 guifg=#4EA9D7 ctermbg=234 guibg=#1c1c1c
+highlight! SignatureMarkText    ctermfg=11 guifg=#756207 ctermbg=234 guibg=#3a3b3d
+highlight! SignatureMarkerText  ctermfg=12 guifg=#4EA9D7 ctermbg=234 guibg=#3a3b3d
 " }}}
 
 " Plugin: vim-choosewin {{{
