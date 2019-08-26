@@ -27,7 +27,9 @@ augroup filetypedetect "{{{
 	autocmd BufNewFile,BufRead Tmuxfile,tmux/config setfiletype tmux
 	autocmd BufNewFile,BufRead Brewfile             setfiletype ruby
 
+  autocmd BufNewFile,BufRead [jJ]ustfile setf make
 augroup END
+
 " }}}
 
 " vim: set foldmethod=marker ts=2 sw=2 tw=80 noet :

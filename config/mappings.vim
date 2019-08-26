@@ -114,7 +114,7 @@ cnoremap <Down> <C-n>
 
 " Fuzzy search
 map z/ <Plug>(incsearch-fuzzy-/)
-noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
+map <silent><Space>/ <Plug>(incsearch-fuzzy-/)
 
 " }}}
 " File operations {{{
@@ -191,16 +191,20 @@ au! WinEnter * call SetWinAdjust()
 function! SetWinAdjust()
    if winnr() > 1
       nnoremap <Leader>zh <C-w>10>
+      nnoremap <Leader>zH <C-w>50>
       nnoremap <Leader>zj <C-w>10-
       nnoremap <Leader>zk <C-w>10+
       nnoremap <Leader>zl <C-w>10<
+      nnoremap <Leader>zL <C-w>50<
       nnoremap <C-Right> <C-w><
       nnoremap <C-Left> <C-w>>
    else
       nnoremap <Leader>zh <C-w>10<
+      nnoremap <Leader>zH <C-w>50<
       nnoremap <Leader>zj <C-w>10+
       nnoremap <Leader>zk <C-w>10-
       nnoremap <Leader>zl <C-w>10>
+      nnoremap <Leader>zL <C-w>50>
       nnoremap <C-Right> <C-w>>
       nnoremap <C-Left> <C-w><
    endif
