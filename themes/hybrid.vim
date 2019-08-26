@@ -27,7 +27,7 @@ highlight TabLineAlt       ctermfg=252 ctermbg=238 guifg=#D0D0D0 guibg=#3a3b3d
 highlight TabLineAltShade  ctermfg=238 ctermbg=236 guifg=#3a3b3d guibg=#303030
 
 highlight ColorColumn ctermfg=241 ctermbg=234 guibg=#3a3b3d ctermbg=None cterm=NONE
-highlight SignColumn ctermfg=241 ctermbg=234 guibg=#3a3b3d ctermbg=None cterm=NONE
+highlight SignColumn guibg=NONE ctermbg=NONE
 " }}}
 
 " Highlights: Statusline {{{
@@ -89,10 +89,10 @@ highlight! WarningSyntax ctermfg=58 guifg=#7d7629
 
 " Plugin: vim-gitgutter {{{
 " ---
-highlight! GitGutterAdd ctermfg=22 guifg=#006000 ctermbg=234 guibg=#3a3b3d
-highlight! GitGutterChange ctermfg=58 guifg=#5F6000 ctermbg=234 guibg=#3a3b3d
-highlight! GitGutterDelete ctermfg=52 guifg=#600000 ctermbg=234 guibg=#3a3b3d
-highlight! GitGutterChangeDelete ctermfg=52 guifg=#600000 ctermbg=234 guibg=#3a3b3d
+highlight! GitGutterAdd ctermfg=22 guifg=#006000 ctermbg=234 guibg=None
+highlight! GitGutterChange ctermfg=58 guifg=#5F6000 ctermbg=234 guibg=None
+highlight! GitGutterDelete ctermfg=52 guifg=#600000 ctermbg=234 guibg=None
+highlight! GitGutterChangeDelete ctermfg=52 guifg=#600000 ctermbg=234 guibg=None
 " }}}
 
 " Plugin: denite {{{
