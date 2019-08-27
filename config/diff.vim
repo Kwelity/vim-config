@@ -92,7 +92,7 @@ let g:mergetool_prefer_revision = 'local'
 " (m) - for working tree version of merged file
 " (r) - for 'remote' revision
 " (l) - for 'local' revision
-let g:mergetool_layout = 'br,m'
+let g:mergetool_layout = 'mr,b'
 
 function s:on_mergetool_set_layout(split)
 
@@ -100,6 +100,11 @@ function s:on_mergetool_set_layout(split)
   " Turn off diff mode, and show syntax highlighting
   " Also let it take less height
   if a:split["layout"] ==# 'mr,b' && a:split["split"] ==# 'b'
+	setlocal nodiff
+	setlocal syntax=on
+	resize 15
+  endif
+  if a:split["layout"] ==# 'lmr' && a:split["split"] ==# 'b'
 	setlocal nodiff
 	setlocal syntax=on
 	resize 15
