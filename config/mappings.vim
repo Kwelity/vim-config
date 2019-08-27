@@ -58,6 +58,7 @@ nnoremap ! :!
 " Allow misspellings
 cnoreabbrev qw wq
 cnoreabbrev Wq wq
+cnoreabbrev W w
 cnoreabbrev WQ wq
 cnoreabbrev Qa qa
 cnoreabbrev Q q
