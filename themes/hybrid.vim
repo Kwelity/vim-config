@@ -11,23 +11,24 @@ if has('gui_running')
 endif
 " }}}
 
-highlight Normal guibg=NONE ctermbg=NONE
+highlight Normal guibg=None ctermbg=None
+highlight Visual  guifg=None guibg=#a35959 gui=None
 
 " Tabline {{{
 " ---
 " TabLineFill: Tab pages line, where there are no labels
-highlight TabLineFill ctermfg=234 ctermbg=236 guifg=#3a3b3d guibg=#303030 cterm=NONE gui=NONE
+highlight TabLineFill ctermfg=234 ctermbg=236 guifg=#3a3b3d guibg=#303030 cterm=None gui=None
 " TabLine: Not-active tab page label
-highlight TabLine     ctermfg=243 ctermbg=236 guifg=#767676 guibg=#303030 cterm=NONE gui=NONE
+highlight TabLine     ctermfg=243 ctermbg=236 guifg=#767676 guibg=#303030 cterm=None gui=None
 " TabLineSel: Active tab page label
-highlight TabLineSel  ctermfg=241 ctermbg=234 guifg=#626262 guibg=#3a3b3d cterm=NONE gui=NONE
+highlight TabLineSel  ctermfg=241 ctermbg=234 guifg=#626262 guibg=#3a3b3d cterm=None gui=None
 " Custom
 highlight TabLineSelShade  ctermfg=235 ctermbg=234 guifg=#262626 guibg=#3a3b3d
 highlight TabLineAlt       ctermfg=252 ctermbg=238 guifg=#D0D0D0 guibg=#3a3b3d
 highlight TabLineAltShade  ctermfg=238 ctermbg=236 guifg=#3a3b3d guibg=#303030
 
-highlight ColorColumn ctermfg=241 ctermbg=234 guibg=#3a3b3d ctermbg=None cterm=NONE
-highlight SignColumn guibg=NONE ctermbg=NONE
+highlight ColorColumn ctermfg=241 ctermbg=234 guibg=#3a3b3d ctermbg=None cterm=None
+highlight SignColumn guibg=None ctermbg=None
 " }}}
 
 " Highlights: Statusline {{{
@@ -53,11 +54,11 @@ highlight User8 guifg=#ffb964 guibg=#30302c ctermfg=215 ctermbg=236
 " Highlights: General GUI {{{
 " ---
 highlight! link jsFutureKeys PreProc
-" highlight! Error  term=NONE cterm=NONE
+" highlight! Error  term=None cterm=None
 " highlight! link WarningMsg  Comment
-" highlight! link pythonSpaceError  NONE
-" highlight! link pythonIndentError NONE
-" highlight! link mkdLineBreak      NONE
+" highlight! link pythonSpaceError  None
+" highlight! link pythonIndentError None
+" highlight! link mkdLineBreak      None
 " highlight! WarningMsg ctermfg=100 guifg=#CCC566
 " highlight! ParenMatch  ctermbg=236 guibg=#30302c
 " highlight! CursorWord0 ctermbg=236 guibg=#30302c

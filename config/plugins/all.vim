@@ -258,6 +258,10 @@ if dein#tap('vimagit')
 	nnoremap <silent> mg :Magit<CR>
 endif
 
+if dein#tap('git-messenger')
+	nmap <Leader>gm <Plug>(git-messenger)
+endif
+
 if dein#tap('vim-easygit')
 	nnoremap <silent> <leader>gd :Gdiff<CR>
 	nnoremap <silent> <leader>gD :Gdiffoff<CR>

@@ -231,9 +231,9 @@
 
 - repo: haya14busa/incsearch-fuzzy.vim
 
-- repo: chemzqm/vim-easygit
-  on_cmd: [Gadd, Gcd, Glcd, Gcommit, Gblame, Gdiff, GdiffThis, Gstatus]
-  hook_add: let g:easygit_enable_command = 1
+# - repo: chemzqm/vim-easygit
+#   on_cmd: [Gadd, Gcd, Glcd, Gcommit, Gblame, Gdiff, GdiffThis, Gstatus]
+#   hook_add: let g:easygit_enable_command = 1
 
 - repo: liuchengxu/vista.vim
   on_cmd: Vista
