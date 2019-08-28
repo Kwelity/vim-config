@@ -188,15 +188,7 @@
   on_source: defx.nvim
   on_func: defx_icons#get
 
-- repo: tyru/caw.vim
-  on_map: { nx: <Plug> }
-  hook_add: |
-    let g:caw_hatpos_sp = ''
-    let g:caw_zeropos_sp = ''
-    let g:caw_wrap_sp_left = ''
-    let g:caw_wrap_sp_right = ''
-    let g:caw_jump_sp = ''
-
+- { repo: tyru/caw.vim, on_map: { nx: <Plug> }}
 - { repo: liuchengxu/vim-which-key, on_cmd: WhichKey }
 - { repo: kana/vim-niceblock, on_map: { x: <Plug> }}
 - { repo: guns/xterm-color-table.vim, on_cmd: XtermColorTable }
@@ -586,9 +578,13 @@
   depends: vim-operator-user
   on_map: { vnx: <Plug> }
 
-- repo: rhysd/vim-operator-surround
-  depends: [ vim-operator-user, vim-textobj-multiblock ]
-  on_map: { vnx: <Plug> }
+- repo: machakann/vim-sandwich
+  depends: vim-operator-user
+  on_map: { vonx: <Plug>(operator-sandwich- }
+  hook_add: |
+    let g:sandwich_no_default_key_mappings = 1
+    let g:operator_sandwich_no_default_key_mappings = 1
+    let g:textobj_sandwich_no_default_key_mappings = 1
 
 - repo: haya14busa/vim-operator-flashy
   depends: vim-operator-user

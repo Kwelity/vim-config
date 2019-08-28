@@ -216,172 +216,163 @@ _Note_ that 95% of the plugins are **[lazy-loaded]**.
 
 ## Non Lazy-Loaded Plugins
 
-Name           | Description
--------------- | ----------------------
-[Shougo/dein.vim] | Dark powered Vim/Neovim plugin manager
-[rafi/awesome-colorschemes] | Awesome color-schemes
-[thinca/vim-localrc] | Enable configuration file of each directory
-[christoomey/tmux-navigator] | Seamless navigation between tmux panes and vim splits
-[romainl/vim-cool] | Simple plugin that makes hlsearch more useful
-[tpope/vim-sleuth] | Heuristically set buffer indent options
-[sgur/vim-editorconfig] | EditorConfig plugin written entirely in Vimscript
-[itchyny/vim-gitbranch] | Lightweight git branch detection
-[itchyny/vim-parenmatch] | Efficient alternative to the standard matchparen plugin
-[itchyny/cursorword] | Underlines word under cursor
-[roxma/nvim-yarp] | Remote Plugin Framework for Neovim (Loads in Vim8 only)
-[roxma/vim-hug-neovim-rpc] | Vim8 compatibility layer for neovim rpc client
+### Non Lazy-Loaded Plugins
 
-## Lazy-Loaded Plugins
+| Name           | Description
+| -------------- | ----------------------
+| [Shougo/dein.vim] | Dark powered Vim/Neovim plugin manager
+| [rafi/awesome-colorschemes] | Awesome color-schemes
+| [thinca/vim-localrc] | Enable configuration file of each directory
+| [christoomey/tmux-navigator] | Seamless navigation between tmux panes and vim splits
+| [romainl/vim-cool] | Simple plugin that makes hlsearch more useful
+| [tpope/vim-sleuth] | Heuristically set buffer indent options
+| [sgur/vim-editorconfig] | EditorConfig plugin written entirely in Vimscript
+| [itchyny/vim-gitbranch] | Lightweight git branch detection
+| [itchyny/vim-parenmatch] | Efficient alternative to the standard matchparen plugin
+| [itchyny/cursorword] | Underlines word under cursor
+| [roxma/nvim-yarp] | Remote Plugin Framework for Neovim (Loads in Vim8 only)
+| [roxma/vim-hug-neovim-rpc] | Vim8 compatibility layer for neovim rpc client
 
 ### Language
 
-Name           | Description
--------------- | ----------------------
-[othree/html5.vim] | HTML5 omnicomplete and syntax
-[mustache/vim-mustache-handlebars] | Mustache and handlebars syntax
-[pearofducks/ansible-vim] | Improved YAML support for Ansible
-[groenewege/vim-less] | Syntax for LESS
-[hail2u/vim-css3-syntax] | CSS3 syntax support to vim's built-in `syntax/css.vim`
-[othree/csscomplete.vim] | Updated built-in CSS complete with latest standards
-[cakebaker/scss-syntax.vim] | Syntax file for scss (Sassy CSS)
-[ap/vim-css-color] | Preview colors in source-code while editing
-[plasticboy/vim-markdown] | Markdown syntax highlighting
-[rhysd/vim-gfm-syntax] | GitHub Flavored Markdown syntax highlight extension
-[pangloss/vim-javascript] | Enhanced Javascript syntax
-[othree/jspc.vim] | JavaScript Parameter Complete
-[posva/vim-vue] | Syntax Highlight for Vue.js components
-[heavenshell/vim-jsdoc] | Generate JSDoc to your JavaScript code
-[jparise/vim-graphql] | GraphQL file detection, syntax highlighting, and indentation
-[moll/vim-node] | Superb development with Node.js
-[elzr/vim-json] | Better JSON support
-[MaxMEllon/vim-jsx-pretty] | React JSX syntax pretty highlighting
-[fatih/vim-go] | Go development
-[vim-python/python-syntax] | Enhanced version of the original Python syntax
-[Vimjas/vim-python-pep8-indent] | A nicer Python indentation style
-[vim-scripts/python_match.vim] | Extend the % motion for Python files
-[tmhedberg/SimpylFold] | No-BS Python code folding
-[raimon49/requirements.txt.vim] | Python requirements file format
-[StanAngeloff/php.vim] | Up-to-date PHP syntax file (5.3 – 7.1 support)
-[shawncplus/phpcomplete.vim] | PHP completion
-[vim-ruby/vim-ruby] | Ruby configuration files
-[tbastos/vim-lua] | Improved Lua 5.3 syntax and indentation support
-[keith/swift.vim] | Swift support
-[vim-jp/syntax-vim-ex] | Improved Vim syntax highlighting
-[chrisbra/csv.vim] | Handling column separated data
-[tpope/vim-git] | Git runtime files
-[ekalinin/Dockerfile.vim] | Syntax and snippets for Dockerfile
-[tmux-plugins/vim-tmux] | Plugin for tmux.conf
-[MTDL9/vim-log-highlighting] | Syntax highlighting for generic log files
-[hashivim/vim-terraform] | Base Terraform integration
-[cespare/vim-toml] | Syntax for TOML
-[mboughaba/i3config.vim] | i3 window manager config syntax
-[dag/vim-fish] | Fish shell edit support
-[jstrater/mpvim] | Macports portfile configuration files
-[robbles/logstash.vim] | Highlights logstash configuration files
-[lifepillar/pgsql.vim] | PostgreSQL syntax and indent
-[chr4/nginx.vim] | Improved nginx syntax and indent
-[IN3D/vim-raml] | Syntax and language settings for RAML
+#### Language
 
-### Commands
+| Name           | Description
+| -------------- | ----------------------
+| [othree/html5.vim] | HTML5 omnicomplete and syntax
+| [mustache/vim-mustache-handlebars] | Mustache and handlebars syntax
+| [pearofducks/ansible-vim] | Improved YAML support for Ansible
+| [groenewege/vim-less] | Syntax for LESS
+| [hail2u/vim-css3-syntax] | CSS3 syntax support to vim's built-in `syntax/css.vim`
+| [othree/csscomplete.vim] | Updated built-in CSS complete with latest standards
+| [cakebaker/scss-syntax.vim] | Syntax file for scss (Sassy CSS)
+| [ap/vim-css-color] | Preview colors in source-code while editing
+| [plasticboy/vim-markdown] | Markdown syntax highlighting
+| [rhysd/vim-gfm-syntax] | GitHub Flavored Markdown syntax highlight extension
+| [pangloss/vim-javascript] | Enhanced Javascript syntax
+| [othree/jspc.vim] | JavaScript Parameter Complete
+| [posva/vim-vue] | Syntax Highlight for Vue.js components
+| [heavenshell/vim-jsdoc] | Generate JSDoc to your JavaScript code
+| [jparise/vim-graphql] | GraphQL file detection, syntax highlighting, and indentation
+| [moll/vim-node] | Superb development with Node.js
+| [elzr/vim-json] | Better JSON support
+| [MaxMEllon/vim-jsx-pretty] | React JSX syntax pretty highlighting
+| [fatih/vim-go] | Go development
+| [vim-python/python-syntax] | Enhanced version of the original Python syntax
+| [Vimjas/vim-python-pep8-indent] | A nicer Python indentation style
+| [vim-scripts/python_match.vim] | Extend the % motion for Python files
+| [tmhedberg/SimpylFold] | No-BS Python code folding
+| [raimon49/requirements.txt.vim] | Python requirements file format
+| [StanAngeloff/php.vim] | Up-to-date PHP syntax file (5.3 – 7.1 support)
+| [shawncplus/phpcomplete.vim] | PHP completion
+| [vim-ruby/vim-ruby] | Ruby configuration files
+| [tbastos/vim-lua] | Improved Lua 5.3 syntax and indentation support
+| [keith/swift.vim] | Swift support
+| [vim-jp/syntax-vim-ex] | Improved Vim syntax highlighting
+| [chrisbra/csv.vim] | Handling column separated data
+| [tpope/vim-git] | Git runtime files
+| [ekalinin/Dockerfile.vim] | Syntax and snippets for Dockerfile
+| [tmux-plugins/vim-tmux] | Plugin for tmux.conf
+| [MTDL9/vim-log-highlighting] | Syntax highlighting for generic log files
+| [hashivim/vim-terraform] | Base Terraform integration
+| [cespare/vim-toml] | Syntax for TOML
+| [mboughaba/i3config.vim] | i3 window manager config syntax
+| [dag/vim-fish] | Fish shell edit support
+| [jstrater/mpvim] | Macports portfile configuration files
+| [robbles/logstash.vim] | Highlights logstash configuration files
+| [lifepillar/pgsql.vim] | PostgreSQL syntax and indent
+| [chr4/nginx.vim] | Improved nginx syntax and indent
+| [IN3D/vim-raml] | Syntax and language settings for RAML
 
-Name           | Description
--------------- | ----------------------
-[Shougo/defx.nvim] | Dark powered file explorer implementation
-[kristijanhusak/defx-git] | Git status implementation for Defx
-[kristijanhusak/defx-icons] | Filetype icons for Defx
-[liuchengxu/vim-which-key] | Shows key-bindings in pop-up
-[t9md/vim-choosewin] | Choose window to use, like tmux's 'display-pane'
-[kana/vim-niceblock] | Make blockwise Visual mode more useful
-[guns/xterm-color-table.vim] | Display 256 xterm colors with their RGB equivalents
-[mbbill/undotree] | Ultimate undo history visualizer
-[metakirby5/codi.vim] | The interactive scratchpad for hackers
-[reedes/vim-wordy] | Uncover usage problems in your writing
-[brooth/far.vim] | Fast find and replace plugin
-[jreybert/vimagit] | Ease your git work-flow within Vim
-[tweekmonster/helpful.vim] | Display vim version numbers in docs
-[lambdalisue/gina.vim] | Asynchronously control git repositories
-[cocopon/colorswatch.vim] | Generate a beautiful color swatch for the current buffer
-[kana/vim-altr] | Switch to the alternate file without interaction
-[lambdalisue/suda.vim] | An alternative sudo.vim for Vim and Neovim
-[tyru/open-browser.vim] | Open URI with your favorite browser
-[tyru/open-browser-unicode.vim] | Open info page about character on current cursor
-[tyru/open-browser-github.vim] | Open GitHub URL of current file
-[tyru/caw.vim] | Robust comment plugin with operator support
-[Shougo/vinarise.vim] | Hex editor
-[mzlogin/vim-markdown-toc] | Generate table of contents for Markdown files
-[chemzqm/vim-easygit] | Git wrapper focus on simplity and usability
-[liuchengxu/vista.vim] | Viewer & Finder for LSP symbols and tags in Vim
-[beloglazov/vim-online-thesaurus] | Look up words in an online thesaurus
-[diepm/vim-rest-console] | Send query to rest api
-[jremmen/vim-ripgrep] | The rg command in vim
-[lfilho/cosco.vim] | Automatically add semi-colon at end of line
-[llotabout/skim.vim] | The skim (sk) command in vim
+#### Commands
 
-### Interface
+| Name           | Description
+| -------------- | ----------------------
+| [Shougo/defx.nvim] | Dark powered file explorer implementation
+| [kristijanhusak/defx-git] | Git status implementation for Defx
+| [kristijanhusak/defx-icons] | Filetype icons for Defx
+| [liuchengxu/vim-which-key] | Shows key-bindings in pop-up
+| [t9md/vim-choosewin] | Choose window to use, like tmux's 'display-pane'
+| [kana/vim-niceblock] | Make blockwise Visual mode more useful
+| [guns/xterm-color-table.vim] | Display 256 xterm colors with their RGB equivalents
+| [mbbill/undotree] | Ultimate undo history visualizer
+| [metakirby5/codi.vim] | The interactive scratchpad for hackers
+| [reedes/vim-wordy] | Uncover usage problems in your writing
+| [brooth/far.vim] | Fast find and replace plugin
+| [jreybert/vimagit] | Ease your git work-flow within Vim
+| [tweekmonster/helpful.vim] | Display vim version numbers in docs
+| [lambdalisue/gina.vim] | Asynchronously control git repositories
+| [cocopon/colorswatch.vim] | Generate a beautiful color swatch for the current buffer
+| [kana/vim-altr] | Switch to the alternate file without interaction
+| [lambdalisue/suda.vim] | An alternative sudo.vim for Vim and Neovim
+| [tyru/open-browser.vim] | Open URI with your favorite browser
+| [tyru/open-browser-unicode.vim] | Open info page about character on current cursor
+| [tyru/open-browser-github.vim] | Open GitHub URL of current file
+| [tyru/caw.vim] | Robust comment plugin with operator support
+| [Shougo/vinarise.vim] | Hex editor
+| [mzlogin/vim-markdown-toc] | Generate table of contents for Markdown files
+| [chemzqm/vim-easygit] | Git wrapper focus on simplity and usability
+| [liuchengxu/vista.vim] | Viewer & Finder for LSP symbols and tags in Vim
+| [beloglazov/vim-online-thesaurus] | Look up words in an online thesaurus
 
-Name           | Description
--------------- | ----------------------
-[haya14busa/vim-asterisk] | Improved * motions
-[rhysd/accelerated-jk] | Up/down movement acceleration
-[haya14busa/vim-edgemotion] | Jump to the edge of block
-[t9md/vim-quickhl] | Quickly highlight words
-[rafi/vim-sidemenu] | Small side-menu useful for terminal users
-[airblade/vim-gitgutter] | Show git changes at Vim gutter and un/stages hunks
-[nathanaelkane/vim-indent-guides] | Visually display indent levels in code
-[MattesGroeger/vim-bookmarks] | Bookmarks, works independently from vim marks
-[hotwatermorning/auto-git-diff] | Display Git diff for interactive rebase
-[rhysd/committia.vim] | Pleasant editing on Git commit messages
-[benekastah/neomake] | Asynchronous linting and make framework
-[junegunn/goyo] | Distraction-free writing
-[junegunn/limelight] | Hyperfocus-writing
-[itchyny/calendar.vim] | Calendar application
-[vimwiki/vimwiki] | Personal Wiki for Vim
-[mhinz/vim-startify] | Vim start page
-[wellle/visual-split.vim] | Resize pane based on buffer content
+#### Interface
 
-### Completion
+| Name           | Description
+| -------------- | ----------------------
+| [haya14busa/vim-asterisk] | Improved * motions
+| [rhysd/accelerated-jk] | Up/down movement acceleration
+| [haya14busa/vim-edgemotion] | Jump to the edge of block
+| [t9md/vim-quickhl] | Quickly highlight words
+| [rafi/vim-sidemenu] | Small side-menu useful for terminal users
+| [airblade/vim-gitgutter] | Show git changes at Vim gutter and un/stages hunks
+| [nathanaelkane/vim-indent-guides] | Visually display indent levels in code
+| [kshenoy/vim-signature] | Display and toggle marks
+| [hotwatermorning/auto-git-diff] | Display Git diff for interactive rebase
+| [rhysd/committia.vim] | Pleasant editing on Git commit messages
+| [benekastah/neomake] | Asynchronous linting and make framework
+| [junegunn/goyo] | Distraction-free writing
+| [junegunn/limelight] | Hyperfocus-writing
+| [itchyny/calendar.vim] | Calendar application
+| [vimwiki/vimwiki] | Personal Wiki for Vim
 
-Name           | Description
--------------- | ----------------------
-[Shougo/deoplete.nvim] | Neovim: Dark powered asynchronous completion framework
-[Shougo/neosnippet.vim] | Snippets with integration to Deoplete
-[ludovicchabant/vim-gutentags] | Manages your tag files
-[mattn/emmet-vim] | Provides support for expanding abbreviations alá emmet
-[Shougo/echodoc.vim] | Print objects' documentation in echo area
-[ncm2/float-preview.nvim] | Pretty completion preview with neovim's floating win
-[Raimondi/delimitMate] | Auto-completion for quotes, parens, brackets
-[Shougo/neosnippet-snippets] | Standard snippets repository for neosnippet
-[Shougo/context_filetype.vim] | Context filetype library for Vim script
-[Shougo/neco-vim] | Deoplete source for Vimscript
-[Shougo/neoinclude.vim] | Include completion framework for Deoplete
-[Shougo/neco-syntax] | Syntax source for Deoplete
-[davidhalter/jedi-vim] | Python jedi autocompletion library
-[zchee/deoplete-go] | deoplete.nvim source for Go
-[zchee/deoplete-jedi] | deoplete.nvim source for Python
-[carlitux/deoplete-ternjs] | deoplete.nvim source for javascript
-[wellle/tmux-complete.vim] | Completion of words in adjacent tmux panes
-[fszymanski/deoplete-emoji] | Deoplete source for emoji codes
-[juliosueiras/vim-terraform-completion] | Autocompletion and linter for Terraform
-[ternjs/tern_for_vim] | Provides Tern-based JavaScript editing support
-[autozimu/LanguageClient-neovim] | Provides LanguageServer based completion
-[tbodt/deoplete-tabnine] | Provides TabNine completion with deoplete
-[ternjs/tern_for_vim] | Provides Tern-based JavaScript editing support
+#### Completion
 
-### Denite
+| Name           | Description
+| -------------- | ----------------------
+| [Shougo/deoplete.nvim] | Neovim: Dark powered asynchronous completion framework
+| [Shougo/neosnippet.vim] | Snippets with integration to Deoplete
+| [ludovicchabant/vim-gutentags] | Manages your tag files
+| [mattn/emmet-vim] | Provides support for expanding abbreviations alá emmet
+| [Shougo/echodoc.vim] | Print objects' documentation in echo area
+| [ncm2/float-preview.nvim] | Pretty completion preview with neovim's floating win
+| [Raimondi/delimitMate] | Auto-completion for quotes, parens, brackets
+| [Shougo/neosnippet-snippets] | Standard snippets repository for neosnippet
+| [Shougo/context_filetype.vim] | Context filetype library for Vim script
+| [Shougo/neco-vim] | Deoplete source for Vimscript
+| [Shougo/neoinclude.vim] | Include completion framework for Deoplete
+| [Shougo/neco-syntax] | Syntax source for Deoplete
+| [davidhalter/jedi-vim] | Python jedi autocompletion library
+| [zchee/deoplete-go] | deoplete.nvim source for Go
+| [zchee/deoplete-jedi] | deoplete.nvim source for Python
+| [carlitux/deoplete-ternjs] | deoplete.nvim source for javascript
+| [wellle/tmux-complete.vim] | Completion of words in adjacent tmux panes
+| [fszymanski/deoplete-emoji] | Deoplete source for emoji codes
+| [juliosueiras/vim-terraform-completion] | Autocompletion and linter for Terraform
+| [ternjs/tern_for_vim] | Provides Tern-based JavaScript editing support
 
-Name           | Description
--------------- | ----------------------
-[Shougo/denite.nvim] | Dark powered asynchronous unite all interfaces
-[raghur/fruzzy] | Freaky fast fuzzy finder
-[Shougo/neoyank.vim] | Denite plugin for yank history
-[Shougo/junkfile.vim] | Denite plugin for temporary files
-[chemzqm/unite-location] | Denite location & quickfix lists
-[chemzqm/denite-git] | gitlog, gitstatus and gitchanged sources
-[rafi/vim-denite-z] | Filter and browse Z (jump around) data file
-[rafi/vim-denite-session] | Browse and open sessions
-[mhinz/vim-startify] | Vim startup page
-[wellle/visual-split.vim] | Resize pane based on buffer content
+#### Denite
 
+| Name           | Description
+| -------------- | ----------------------
+| [Shougo/denite.nvim] | Dark powered asynchronous unite all interfaces
+| [raghur/fruzzy] | Freaky fast fuzzy finder
+| [Shougo/neoyank.vim] | Denite plugin for yank history
+| [Shougo/junkfile.vim] | Denite plugin for temporary files
+| [chemzqm/unite-location] | Denite location & quickfix lists
+| [chemzqm/denite-git] | gitlog, gitstatus and gitchanged sources
+| [rafi/vim-denite-z] | Filter and browse Z (jump around) data file
+| [rafi/vim-denite-session] | Browse and open sessions
+| [rafi/vim-denite-mpc] | Denite source for browsing your MPD music library
 
 ### Operators & Text Objects
 
@@ -534,7 +525,7 @@ Name           | Description
 
 [kana/vim-operator-user]: https://github.com/kana/vim-operator-user
 [kana/vim-operator-replace]: https://github.com/kana/vim-operator-replace
-[rhysd/vim-operator-surround]: https://github.com/rhysd/vim-operator-surround
+[machakann/vim-sandwich]: https://github.com/machakann/vim-sandwich
 [haya14busa/vim-operator-flashy]: https://github.com/haya14busa/vim-operator-flashy
 [kana/vim-textobj-user]: https://github.com/kana/vim-textobj-user
 [terryma/vim-expand-region]: https://github.com/terryma/vim-expand-region
