@@ -376,20 +376,20 @@ _Note_ that 95% of the plugins are **[lazy-loaded]**.
 
 ### Operators & Text Objects
 
-Name           | Description
--------------- | ----------------------
-[kana/vim-operator-user] | Define your own custom operators
-[kana/vim-operator-replace] | Operator to replace text with register content
-[rhysd/vim-operator-surround] | Operator to enclose text objects
-[haya14busa/vim-operator-flashy] | Highlight yanked area
-[kana/vim-textobj-user] | Create your own text objects
-[terryma/vim-expand-region] | Visually select increasingly larger regions of text
-[AndrewRadev/sideways.vim] | Match function arguments
-[AndrewRadev/splitjoin.vim] | Transition code between multi-line and single-line
-[AndrewRadev/linediff.vim] | Perform diffs on blocks of code
-[AndrewRadev/dsf.vim] | Delete surrounding function call
-[osyo-manga/vim-textobj-multiblock] | Handle bracket objects
-[kana/vim-textobj-function] | Text objects for functions
+| Name           | Description
+| -------------- | ----------------------
+| [kana/vim-operator-user] | Define your own custom operators
+| [kana/vim-operator-replace] | Operator to replace text with register content
+| [machakann/vim-sandwich] | Search, select, and edit sandwich text objects
+| [haya14busa/vim-operator-flashy] | Highlight yanked area
+| [kana/vim-textobj-user] | Create your own text objects
+| [terryma/vim-expand-region] | Visually select increasingly larger regions of text
+| [AndrewRadev/sideways.vim] | Match function arguments
+| [AndrewRadev/splitjoin.vim] | Transition code between multi-line and single-line
+| [AndrewRadev/linediff.vim] | Perform diffs on blocks of code
+| [AndrewRadev/dsf.vim] | Delete surrounding function call
+| [osyo-manga/vim-textobj-multiblock] | Handle bracket objects
+| [kana/vim-textobj-function] | Text objects for functions
 
 [Shougo/dein.vim]: https://github.com/Shougo/dein.vim
 [rafi/awesome-colorschemes]: https://github.com/rafi/awesome-vim-colorschemes
