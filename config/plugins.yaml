@@ -407,7 +407,7 @@
 # ----------
 
 - repo: neoclide/coc.nvim
-  on_ft: rust
+  on_ft: [rust, json, javascript]
   merge: 0
   rev: release
   hook_source: source $VIM_PATH/config/plugins/coc.vim

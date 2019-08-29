@@ -1,5 +1,14 @@
 " coc.nvim settings
 " ---
+" Some servers have issues with backup files, see #649
+set nobackup
+set nowritebackup
+
+" Better display for messages
+set cmdheight=2
+
+" You will have bad experience for diagnostic messages when it's default 4000.
+set updatetime=300
 
 " Don't load the defx-git plugin file, not needed
 let b:defx_git_loaded = 1
@@ -67,3 +76,34 @@ function! s:show_documentation()
 		let l:found = CocAction('doHover')
 	endif
 endfunction
+
+" Use `:Format` to format current buffer
+command! -nargs=0 Format :call CocAction('format')
+
+
+" Using CocList
+" Show all diagnostics
+nnoremap <silent> ,a  :<C-u>CocList diagnostics<cr>
+" Manage extensions
+" nnoremap <silent> ,e  :<C-u>CocList extensions<cr>
+" Show commands
+nnoremap <silent> ,m  :<C-u>CocList commands<cr>
+" Find symbol of current document
+nnoremap <silent> ,o  :<C-u>CocList outline<cr>
+" Search workspace symbols
+nnoremap <silent> ,s  :<C-u>CocList -I symbols<cr>
+" Do default action for next item.
+nnoremap <silent> ,j  :<C-u>CocNext<CR>
+" Do default action for previous item.
+nnoremap <silent> ,k  :<C-u>CocPrev<CR>
+" Resume latest coc list
+nnoremap <silent> ,p  :<C-u>CocListResume<CR>
+
+" Remap for format selected region
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+" Remap for do codeAction of current line
+nmap ,cc  <Plug>(coc-codeaction)
+" Fix autofix problem of current line
+nmap ,qf  <Plug>(coc-fix-current)
