@@ -13,6 +13,7 @@ endif
 
 highlight Normal guibg=None ctermbg=None
 highlight Visual  guifg=None guibg=#a35959 gui=None
+highlight CursorLine  guifg=None guibg=#464b51 gui=None
 
 " Tabline {{{
 " ---

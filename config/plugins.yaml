@@ -15,9 +15,10 @@
 - repo: christoomey/vim-tmux-navigator
   if: "! (has('win32') || has('win64'))"
 
+
+
 - repo: tpope/vim-sleuth
   hook_add: let g:sleuth_neighbor_limit = 5
-
 # GUI only:
 - { repo: equalsraf/neovim-gui-shim, if: has('gui_running') }
 
@@ -199,7 +200,7 @@
 # - { repo: brooth/far.vim, on_cmd: [ Far, Farp, F ] }
 - { repo: jreybert/vimagit, on_cmd: Magit }
 # - { repo: tweekmonster/helpful.vim, on_cmd: HelpfulVersion }
-- { repo: lambdalisue/gina.vim, on_cmd: Gina }
+# - { repo: lambdalisue/gina.vim, on_cmd: Gina }
 - { repo: cocopon/colorswatch.vim, on_cmd: ColorSwatchGenerate }
 - { repo: kana/vim-altr, on_map: { n: <Plug> }}
 - { repo: Shougo/vinarise.vim, on_cmd: Vinarise }
@@ -280,9 +281,9 @@
 
 - repo: samoshkin/vim-mergetool
 
-- repo: vim-airline/vim-airline
-- repo: vim-airline/vim-airline-themes
-- repo: emilyst/match-count-statusline
+# - repo: vim-airline/vim-airline
+# - repo: vim-airline/vim-airline-themes
+# - repo: emilyst/match-count-statusline
 # - repo: itchyny/lightline.vim
 # - repo: itchyny/vim-gitbranch
 # - repo: macthecadillac/lightline-gitdiff
@@ -405,10 +406,11 @@
 # Completion
 # ----------
 
-# - repo: neoclide/coc.nvim
-#  merge: 0
-#  rev: release
-#  hook_source: source $VIM_PATH/config/plugins/coc.vim
+- repo: neoclide/coc.nvim
+  on_ft: rust
+  merge: 0
+  rev: release
+  hook_source: source $VIM_PATH/config/plugins/coc.vim
 
 - repo: Shougo/deoplete.nvim
   depends: context_filetype.vim
@@ -531,12 +533,6 @@
   on_event: InsertEnter
   hook_add: let g:tmuxcomplete#trigger = ''
 
-- repo: autozimu/LanguageClient-neovim
-  on_ft: rust
-  rev: next
-  build: bash install.sh
-  hook_source: source $VIM_PATH/config/plugins/languageclientneovim.vim
-  # hook_source: source $VIM_PATH/config/plugins/deoplete.vim
 
 - repo: tbodt/deoplete-tabnine
   build: bash install.sh
