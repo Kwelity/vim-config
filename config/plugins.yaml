@@ -1,6 +1,7 @@
 ---
 # PLUGINS
-# ==========================================
+# ===
+# See config/plugins/all.vim for plugin mappings
 
 # Startup
 # -------
@@ -31,132 +32,16 @@
 
 # Languages
 # ---------
-# - { repo: hail2u/vim-css3-syntax, on_ft: css }
-# - { repo: ap/vim-css-color, on_ft: [ css, scss, sass ] }
-# - { repo: cakebaker/scss-syntax.vim, on_ft: [ scss, sass ]}
-# - { repo: groenewege/vim-less, on_ft: less }
-# - { repo: othree/csscomplete.vim, on_ft: css }
-# - { repo: iloginow/vim-stylus, on_ft: stylus }  # or wavded/vim-stylus ?
-# - { repo: mustache/vim-mustache-handlebars, on_ft: [html, mustache, handlebars]}
 
 - { repo: sheerun/vim-polyglot}
-
 - { repo: itkq/fluentd-vim}
 
-# - repo: othree/html5.vim
-#   on_ft: html
-#   hook_add: |
-#     let g:html5_event_handler_attributes_complete = 0
-#     let g:html5_rdfa_attributes_complete = 0
-#     let g:html5_microdata_attributes_complete = 0
-#     let g:html5_aria_attributes_complete = 0
-
-# Markdown related
-#   on_ft: markdown
-#   hook_add: |
-#     let g:vim_markdown_folding_level = 6
-#     let g:vim_markdown_emphasis_multiline = 0
-#     let g:vim_markdown_conceal = 0
-#     let g:vim_markdown_frontmatter = 1
-#     let g:vim_markdown_new_list_item_indent = 2
-#     let g:vim_markdown_edit_url_in = 'vsplit'
-#     let g:vim_markdown_strikethrough = 1
-#     let g:vim_markdown_fenced_languages = [
-#       \ 'c++=cpp',
-#       \ 'viml=vim',
-#       \ 'bash=sh',
-#       \ 'ini=dosini',
-#       \ 'js=javascript',
-#       \ 'json=javascript',
-#       \ 'docker=Dockerfile',
-#       \ 'makefile=make',
-#       \ 'py=python'
-#       \ ]
-
-# - repo: rhysd/vim-gfm-syntax
-#   depends: vim-markdown
-#   on_ft: markdown
-#   hook_source: |
-#     let g:gfm_syntax_enable_always = 0
-#     let g:gfm_syntax_highlight_emoji = 0
-#     let g:gfm_syntax_enable_filetypes = ['markdown']
-
-# Javascript related
-# - repo: pangloss/vim-javascript
-#   on_ft: [ javascript, jsx, javascript.jsx ]
-#   hook_source: |
-#     let g:javascript_plugin_jsdoc = 1
-#     let g:javascript_plugin_flow = 1
-#     highlight! link jsFutureKeys PreProc
-
-# - repo: MaxMEllon/vim-jsx-pretty
-#   on_ft: [ javascript, jsx, javascript.jsx ]
-#   depends: vim-javascript
-#   hook_source: let g:vim_jsx_pretty_colorful_config = 1
 
 - { repo: heavenshell/vim-jsdoc, on_ft: [ javascript, jsx ] }
 - { repo: jparise/vim-graphql, on_ft: [ javascript, jsx ] }
 - { repo: moll/vim-node, on_ft: [ javascript, jsx ] }
 - { repo: elzr/vim-json, on_ft: json }
 - { repo: posva/vim-vue, on_ft: vue }
-
-# pangloss/javascript vs. othree/yajs
-#- { repo: othree/yajs.vim, on_ft: [ javascript, jsx ]}
-#- { repo: gavocanov/vim-js-indent, on_ft: [ javascript, jsx ]}
-#- repo: mxw/vim-jsx
-#  on_ft: [ javascript, jsx ]
-#  hook_add: let g:jsx_ext_required = 0
-
-# Golang related
-# - repo: fatih/vim-go
-#   on_ft: go
-#   hook_source: |
-#     let g:go_highlight_array_whitespace_error = 0
-#     let g:go_highlight_chan_whitespace_error = 0
-#     let g:go_highlight_space_tab_error = 0
-#     let g:go_highlight_trailing_whitespace_error = 0
-#     let g:go_highlight_extra_types = 1
-#     let g:go_highlight_build_constraints = 1
-#     let g:go_highlight_extra_types = 1
-#     let g:go_highlight_fields = 1
-#     let g:go_highlight_format_strings = 1
-#     let g:go_highlight_functions = 1
-#     let g:go_highlight_function_calls = 1
-#     let g:go_highlight_function_parameters = 1
-#     let g:go_highlight_types = 1
-#     let g:go_highlight_generate_tags = 1
-#     let g:go_highlight_operators = 1
-#     let g:go_highlight_string_spellcheck = 0
-#     let g:go_highlight_variable_declarations = 0
-#     let g:go_highlight_variable_assignments = 0
-
-# Python related
-# - { repo: vim-python/python-syntax, on_ft: python }
-# - { repo: Vimjas/vim-python-pep8-indent, on_ft: python }
-# - { repo: vim-scripts/python_match.vim, on_ft: python }
-# - { repo: tmhedberg/SimpylFold, on_ft: python }
-# - { repo: raimon49/requirements.txt.vim, on_ft: requirements }
-
-# Misc
-# - { repo: StanAngeloff/php.vim, on_ft: php }
-# - { repo: tbastos/vim-lua, on_ft: lua }
-# - { repo: vim-ruby/vim-ruby, on_ft: ruby }
-# - { repo: keith/swift.vim, on_ft: swift }
-# - { repo: rust-lang/rust.vim, on_ft: rust }
-# - { repo: vim-jp/syntax-vim-ex, on_ft: vim }
-# - { repo: chrisbra/csv.vim, on_ft: csv }
-# - { repo: tpope/vim-git, on_ft: [ gitcommit, gitrebase, gitconfig ]}
-# - { repo: ekalinin/Dockerfile.vim, on_ft: [ Dockerfile, docker-compose ]}
-# - { repo: tmux-plugins/vim-tmux, on_ft: tmux }
-# - { repo: MTDL9/vim-log-highlighting, on_ft: log }
-# - { repo: cespare/vim-toml, on_ft: toml }
-# - { repo: mboughaba/i3config.vim, on_ft: i3config }
-# - { repo: dag/vim-fish, on_ft: fish }
-# - { repo: jstrater/mpvim, on_ft: portfile }
-# - { repo: robbles/logstash.vim, on_ft: logstash }
-# - { repo: lifepillar/pgsql.vim, on_ft: pgsql }
-# - { repo: chr4/nginx.vim, on_ft: nginx }
-# - { repo: IN3D/vim-raml, on_ft: raml }
 
 - repo: pearofducks/ansible-vim
   on_ft: [ ansible, ansible_hosts, jinja2 ]
@@ -172,7 +57,7 @@
       \ }
 
 - repo: hashivim/vim-terraform
-  on_ft: [ terraform, hcl ]
+  on_ft: terraform
   on_cmd: [ Terraform, TerraformFmt ]
   hook_add: let g:terraform_fmt_on_save = 1
 
@@ -184,26 +69,22 @@
   hook_source: source $VIM_PATH/config/plugins/defx.vim
 
 - { repo: kristijanhusak/defx-git, on_source: defx.nvim }
+- { repo: kristijanhusak/defx-icons, on_source: defx.nvim }
 
-- repo: kristijanhusak/defx-icons
-  on_source: defx.nvim
-  on_func: defx_icons#get
 
 - { repo: tyru/caw.vim, on_map: { nx: <Plug> }}
 - { repo: liuchengxu/vim-which-key, on_cmd: WhichKey }
-- { repo: kana/vim-niceblock, on_map: { x: <Plug> }}
 - { repo: guns/xterm-color-table.vim, on_cmd: XtermColorTable }
 - { repo: mbbill/undotree, on_cmd: UndotreeToggle }
 - { repo: metakirby5/codi.vim, on_cmd: Codi }
-# - { repo: Shougo/vimproc.vim, build: make, on_func: vimproc# }
-# - { repo: reedes/vim-wordy, on_cmd: [ Wordy, NextWordy, PrevWordy ]}
-# - { repo: brooth/far.vim, on_cmd: [ Far, Farp, F ] }
-- { repo: jreybert/vimagit, on_cmd: Magit }
-# - { repo: tweekmonster/helpful.vim, on_cmd: HelpfulVersion }
-# - { repo: lambdalisue/gina.vim, on_cmd: Gina }
+- { repo: jreybert/vimagit, on_cmd: Magit } }
 - { repo: cocopon/colorswatch.vim, on_cmd: ColorSwatchGenerate }
 - { repo: kana/vim-altr, on_map: { n: <Plug> }}
 - { repo: Shougo/vinarise.vim, on_cmd: Vinarise }
+
+- repo: kana/vim-niceblock
+  on_map: { x: <Plug> }
+  hook_add: let g:niceblock_no_default_key_mappings = 0
 
 - repo: t9md/vim-choosewin
   on_map: { n: <Plug> }
@@ -232,19 +113,20 @@
 
 - repo: haya14busa/incsearch-fuzzy.vim
 
-# - repo: chemzqm/vim-easygit
-#   on_cmd: [Gadd, Gcd, Glcd, Gcommit, Gblame, Gdiff, GdiffThis, Gstatus]
-#   hook_add: let g:easygit_enable_command = 1
-
 - repo: liuchengxu/vista.vim
   on_cmd: Vista
   hook_add: |
     let g:vista#renderer#enable_icon = 1
     let g:vista_echo_cursor_strategy = 'scroll'
 
-- repo: beloglazov/vim-online-thesaurus  # FIXME
-  on_cmd: [ OnlineThesaurusCurrentWord, Thesaurus ]
-  hook_add: let g:online_thesaurus_map_keys = 0
+- repo: Ron89/thesaurus_query.vim
+  on_cmd:
+    - ThesaurusQueryReplaceCurrentWord
+    - ThesaurusQueryLookupCurrentWord
+    - Thesaurus
+  hook_add: |
+    let g:tq_map_keys = 0
+    let g:tq_use_vim_autocomplete = 0
 
 - repo: diepm/vim-rest-console
   hook_add: |
@@ -258,10 +140,6 @@
     nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
 
 - repo: lotabout/skim.vim
-
-# - repo: tpope/vim-repeat
-  # on_map: { nx: <Plug> }
-
 
 # ==========================================
 # Interface
@@ -281,26 +159,24 @@
 
 - repo: samoshkin/vim-mergetool
 
-# - repo: vim-airline/vim-airline
-# - repo: vim-airline/vim-airline-themes
-# - repo: emilyst/match-count-statusline
-# - repo: itchyny/lightline.vim
-# - repo: itchyny/vim-gitbranch
-# - repo: macthecadillac/lightline-gitdiff
-# - repo: sainnhe/artify.vim
 - repo: rhysd/vim-color-spring-night
 
 - repo: tpope/vim-fugitive
+
+- repo: RRethy/vim-hexokinase
+  on_ft: [ css, scss, sass, stylus, vim ]
+  hook_add: |
+    let g:Hexokinase_ftAutoload = [ 'css', 'scss', 'sass', 'stylus' ]
 
 - repo: itchyny/vim-cursorword
   on_path: .*
   hook_source: |
     augroup user_plugin_cursorword
       autocmd!
-      autocmd FileType denite,qf,easygitblame let b:cursorword=0
-      autocmd WinEnter * if &diff | let b:cursorword=0 | endif
-      autocmd InsertEnter * let b:cursorword=0
-      autocmd InsertLeave * let b:cursorword=1
+      autocmd FileType denite,qf,easygitblame let b:cursorword = 0
+      autocmd WinEnter * if &diff | let b:cursorword = 0 | endif
+      autocmd InsertEnter * let b:cursorword = 0
+      autocmd InsertLeave * let b:cursorword = 1
     augroup END
 
 - repo: airblade/vim-gitgutter
@@ -330,31 +206,32 @@
     let g:SignatureIncludeMarkers = repeat('⚐', 10)
     autocmd user_events User GitGutter call signature#sign#Refresh()
 
-- repo: Yggdroot/indentLine
+- repo: nathanaelkane/vim-indent-guides
+  on_cmd: [ IndentGuidesEnable, IndentGuidesDisable, IndentGuidesToggle ]
+  hook_post_source: |
+    call indent_guides#init_script_vars()
+    call indent_guides#highlight_colors()
   hook_add: |
-    let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-    let g:indentLine_color_gui = '#686868'
-
-# - repo: nathanaelkane/vim-indent-guides
-#   on_cmd: [ IndentGuidesEnable, IndentGuidesDisable, IndentGuidesToggle ]
-#   hook_post_source: |
-#     call indent_guides#init_script_vars()
-#     call indent_guides#highlight_colors()
-#   hook_add: |
-#     let g:indent_guides_color_change_percent = 3
-#     let g:indent_guides_autocmds_enabled = 0
-#     let g:indent_guides_default_mapping = 0
-#     let g:indent_guides_guide_size = 1
-#     let g:indent_guides_indent_levels = 15
-#     let g:indent_exclude = [ 'help', 'denite', 'codi' ]
-#     autocmd MyAutoCmd BufEnter *
-#       \ if ! empty(&l:filetype) && index(g:indent_exclude, &l:filetype) == -1
-#       \|   if g:indent_guides_autocmds_enabled == 0 && &l:expandtab
-#       \|     IndentGuidesEnable
-#       \|   elseif g:indent_guides_autocmds_enabled == 1 && ! &l:expandtab
-#       \|     IndentGuidesDisable
-#       \|   endif
-#       \| endif
+    let g:indent_guides_color_change_percent = 3
+    let g:indent_guides_autocmds_enabled = 0
+    let g:indent_guides_default_mapping = 0
+    let g:indent_guides_guide_size = 1
+    let g:indent_guides_indent_levels = 25
+    let g:indent_exclude = [ 'help', 'denite', 'codi' ]
+    augroup user_plugin_indentguides
+      autocmd!
+      autocmd BufEnter *
+      \ if ! empty(&l:filetype) && index(g:indent_exclude, &l:filetype) == -1
+      \|   if g:indent_guides_autocmds_enabled == 0 && &l:expandtab
+      \|     IndentGuidesEnable
+      \|   elseif g:indent_guides_autocmds_enabled == 1 && ! &l:expandtab
+      \|     IndentGuidesDisable
+      \|   endif
+      \| endif
+    augroup END
+    if ! has('vim_starting')
+      doautocmd <nomodeline> user_plugin_indentguides BufEnter
+    endif
 
 
 - repo: rhysd/committia.vim
@@ -363,7 +240,6 @@
 
 - repo: benekastah/neomake
   on_path: .*
-  on_event: [ BufWritePre ]
   on_cmd: [ Neomake, NeomakeFile, NeomakeEnable, NeomakeToggle, NeomakeInfo ]
   hook_source: |
     source $VIM_PATH/config/plugins/neomake.vim
@@ -399,7 +275,6 @@
 #     \ ]
 
 - repo: mhinz/vim-startify
-
 - repo: wellle/visual-split.vim
 
 # ==========================================
@@ -514,7 +389,7 @@
     let g:gutentags_generate_on_missing = 1
     let g:gutentags_generate_on_new = 0
     let g:gutentags_exclude_project_root = [ '/usr/local' ]
-    let g:gutentags_exclude_filetypes = [ 'defx', 'denite', 'vista' ]
+    let g:gutentags_exclude_filetypes = [ 'defx', 'denite', 'vista', 'magit' ]
     let g:gutentags_ctags_exclude_wildignore = 1
     let g:gutentags_ctags_exclude = [
       \ '.idea', '.cache', '.tox', '.bundle', 'build', 'dist',
@@ -545,25 +420,20 @@
   trusted: 1
   hook_source: source $VIM_PATH/config/plugins/denite.vim
 
+- repo: Shougo/neomru.vim
+  on_source: denite.nvim
+  hook_add: |
+    let g:neomru#directory_mru_path = g:etc#cache_path . '/mru/dir'
+    let g:neomru#file_mru_path = g:etc#cache_path . '/mru/file'
+    let g:unite_source_file_mru_limit = 5000
+
 - { repo: Shougo/neoyank.vim, on_source: denite.nvim, on_event: TextYankPost }
 - { repo: Shougo/junkfile.vim, on_source: denite.nvim }
 - { repo: chemzqm/unite-location, on_source: denite.nvim }
 - { repo: chemzqm/denite-git, on_source: denite.nvim }
-# - { repo: rafi/vim-denite-z, on_source: denite.nvim }
 - { repo: rafi/vim-denite-session, on_source: denite.nvim }
 - { repo: raineszm/denite-fasd.nvim, on_source: denite.nvim }
 
-#- repo: raghur/fruzzy
-#  on_source: denite.nvim
-#  hook_post_update: call fruzzy#install()
-#  hook_source: let g:fruzzy#sortonempty = 0
-
-# - { repo: rafi/vim-denite-task, on_source: denite.nvim }
-
-# - repo: rafi/vim-denite-mpc
-#   if: executable('mpc')
-#   on_source: denite.nvim
-#   hook_source: call denite#custom#var('mpc', 'default_view', 'date')
 
 # ==========================================
 # Operators

@@ -11,6 +11,7 @@ call denite#custom#option('_', {
 	\ 'vertical_preview': 1,
 	\ 'direction': 'dynamicbottom',
 	\ 'prompt': '❯',
+	\ 'max_dynamic_update_candidates': 50000,
 	\ 'winwidth': &columns,
 	\ 'winheight': &lines / 3,
 	\ 'wincol': 0,
@@ -24,12 +25,10 @@ endif
 " MATCHERS
 " Default is 'matcher/fuzzy'
 " call denite#custom#source('tag', 'matchers', ['matcher/substring'])
-" call denite#custom#source('_', 'matchers', ['matcher/fruzzy'])
 
 " SORTERS
 " Default is 'sorter/rank'
 " call denite#custom#source('file/rec,grep', 'sorters', ['sorter/sublime'])
-" call denite#custom#source('_', 'sorters', ['sorter/fruzzy'])
 call denite#custom#source('z', 'sorters', ['sorter_z'])
 
 " CONVERTERS
