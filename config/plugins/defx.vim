@@ -9,7 +9,7 @@ call defx#custom#option('_', {
 	\ 'direction': 'topleft',
 	\ 'listed': 1,
 	\ 'show_ignored_files': 0,
-	\ 'root_marker': '≡ ',
+	\ 'root_marker': ' ',
 	\ 'ignored_files':
 	\     '.mypy_cache,.pytest_cache,.git,.hg,.svn,.stversions'
 	\   . ',__pycache__,.sass-cache,*.egg-info,.DS_Store,*.pyc'
@@ -28,12 +28,12 @@ call defx#custom#column('git', {
 	\   }
 	\ })
 
-" call defx#custom#column('filename', { 'min_width': 5, 'max_width': 55 })
+call defx#custom#column('mark', { 'readonly_icon': '✗', 'selected_icon': '✓' })
+" call defx#custom#column('filename', { 'min_width': 20, 'max_width': -95 })
 
 " defx-icons plugin
 let g:defx_icons_column_length = 2
-let g:defx_icons_mark_icon = '✓'
-let g:defx_icons_parent_icon = ''
+let g:defx_icons_mark_icon = ''
 
 " Events
 " ---
@@ -116,7 +116,7 @@ endfunction
 
 function! s:defx_mappings() abort
 	" Defx window keyboard mappings
-	setlocal signcolumn=no
+	setlocal signcolumn=no expandtab
 
 	nnoremap <silent><buffer><expr> se    defx#do_action('save_session')
 	nnoremap <silent><buffer><expr> <CR>  <SID>defx_toggle_tree()
@@ -163,7 +163,7 @@ function! s:defx_mappings() abort
 		\ defx#do_action('toggle_columns', 'indent:mark:filename:type:size:time')
 
 	" Tools
-	nnoremap <silent><buffer><expr> w   defx#async_action('call', '<SID>toggle_width')
+	nnoremap <silent><buffer><expr> w   defx#do_action('call', '<SID>toggle_width')
 	nnoremap <silent><buffer><expr> gx  defx#async_action('execute_system')
 	nnoremap <silent><buffer><expr> gd  defx#async_action('multi', ['drop', ['call', '<SID>git_diff']])
 	nnoremap <silent><buffer><expr> gr  defx#do_action('call', '<SID>grep')

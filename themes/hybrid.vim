@@ -11,10 +11,13 @@ if has('gui_running')
 endif
 " }}}
 
+
 highlight Normal guibg=None ctermbg=None
 highlight Visual  guifg=None guibg=#a35959 gui=None
 highlight CursorLine  guifg=None guibg=#464b51 gui=None
 
+" Terminal colors {{{
+" ---
 let g:terminal_color_0 = '#2a2a2a'
 let g:terminal_color_1 = '#d370a3'
 let g:terminal_color_2 = '#6d9e3f'
@@ -31,6 +34,7 @@ let g:terminal_color_12 = '#98cbfe'
 let g:terminal_color_13 = '#e5b0ff'
 let g:terminal_color_14 = '#75daa9'
 let g:terminal_color_15 = '#cfcfcf'
+" }}}
 
 " Tabline {{{
 " ---
