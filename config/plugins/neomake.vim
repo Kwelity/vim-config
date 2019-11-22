@@ -5,10 +5,7 @@ if ! empty(g:python3_host_prog)
 	let g:neomake_python_python_exe = g:python3_host_prog
 endif
 
-" augroup user_plugin_neomake
-" 	autocmd!
-" 	autocmd BufWritePre *.js call s:set_javascript_exe()
-" augroup END
+let g:neomake_virtualtext_current_error = 0
 
 " YAML / ANSIBLE
 let g:neomake_yaml_enabled_makers = ['yamllint']
@@ -16,8 +13,10 @@ let g:neomake_ansible_enabled_makers = ['yamllint']
 let g:neomake_ansible_yamllint_maker = neomake#makers#ft#yaml#yamllint()
 let g:neomake_yamllint_line_length = 100
 
-" SHELL
-let g:neomake_shellcheck_args = ['-xfgcc']
+" augroup user_plugin_neomake
+" 	autocmd!
+" 	autocmd BufWritePre *.js call s:set_javascript_exe()
+" augroup END
 
 " JAVASCRIPT / JSX
 function! s:set_javascript_exe()
